@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FAFAF8}
+a{color:#141414;text-decoration:underline;text-underline-offset:3px}
+a:hover{color:#2B59FF}
+</style>
+</helmet>
+<div style="background:#FAFAF8;color:#141414;font-family:'Schibsted Grotesk',system-ui,sans-serif;font-size:17px;line-height:1.6;padding-bottom:96px">
+
+<header data-screen-label="Hero" style="max-width:1160px;margin:0 auto;padding:clamp(56px,8vw,104px) clamp(20px,4vw,48px) 44px;display:flex;flex-direction:column;gap:28px">
+<div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#5A5A55">Case study · personal planning assistant · iOS</div>
+<h1 style="margin:0;font-size:clamp(40px,6.2vw,80px);line-height:1.02;letter-spacing:-0.025em;font-weight:600;max-width:16ch;text-wrap:balance">Getting started with a personal assistant, and planning with it every day</h1>
+<p style="margin:0;font-size:clamp(18px,2vw,22px);line-height:1.5;color:#3A3A36;max-width:58ch;text-wrap:pretty">I redesigned the onboarding, sign-up and login, calendar and assistant prompt of an iOS app that turns conversations into tasks, events and plans.</p>
+<dl style="margin:8px 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px 32px;border-top:1px solid #DEDED8;padding-top:24px">
+<div><dt style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#5A5A55">Role</dt><dd style="margin:4px 0 0;font-size:16px">UX Designer (consultant)</dd></div>
+<div><dt style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#5A5A55">Platform</dt><dd style="margin:4px 0 0;font-size:16px">iOS</dd></div>
+<div><dt style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#5A5A55">Project</dt><dd style="margin:4px 0 0;font-size:16px">Redesign of an existing product</dd></div>
+<div><dt style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#5A5A55">My scope</dt><dd style="margin:4px 0 0;font-size:16px">Onboarding, account access, calendar and events, assistant prompt, build reviews</dd></div>
+<div><dt style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#5A5A55">Status</dt><dd style="margin:4px 0 0;font-size:16px">Shipped</dd></div>
+</dl>
+<p style="margin:0;font-size:14px;line-height:1.5;color:#5A5A55;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.04em;padding:2px 8px;border:1px solid #CFCFC8;border-radius:999px;background:#FFFFFF">ANONYMISED</span><span style="flex:1;min-width:240px">The product and client aren’t named. Every screen here is rebuilt with a placeholder brand and fictional data. None are screenshots of the live app.</span></p>
+</header>
+
+<div style="max-width:1260px;margin:0 auto;padding:0 clamp(12px,2vw,24px)">
+<div style="background:#ECEDE8;border-radius:28px;padding:clamp(28px,4vw,56px) 16px;display:flex;justify-content:center;align-items:center;gap:clamp(16px,3vw,44px);flex-wrap:wrap">
+<div style="zoom:0.58"><dc-import name="WrenApp" screen="hello" locked="{{ true }}" hint-size="402px,874px"></dc-import></div>
+<div style="zoom:0.68"><dc-import name="WrenApp" screen="events" locked="{{ true }}" hint-size="402px,874px"></dc-import></div>
+<div style="zoom:0.58"><dc-import name="WrenApp" screen="create" preset="create-done" locked="{{ true }}" hint-size="402px,874px"></dc-import></div>
+</div>
+</div>
+
+<section data-screen-label="01 Overview" style="max-width:1160px;margin:0 auto;padding:clamp(64px,9vw,112px) clamp(20px,4vw,48px) 0">
+<div style="display:flex;align-items:baseline;gap:18px;border-top:1.5px solid #141414;padding-top:18px;margin-bottom:32px"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:14px;color:#5A5A55">01</span><h2 style="margin:0;font-size:clamp(28px,3.4vw,44px);line-height:1.08;letter-spacing:-0.02em;font-weight:600">Overview</h2></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px 56px">
+<p style="margin:0;text-wrap:pretty">The product is a personal planning assistant for iPhone. You tell it what you need to do, and it turns that into tasks, events and reminders. A short assessment builds a personality profile, which it uses to shape its suggestions.</p>
+<p style="margin:0;text-wrap:pretty">I worked on it as a UX design consultant. I was given the existing Figma designs and asked to improve them, with freedom to change flows and interactions as well as visuals. Once screens were built, I checked them against my designs and followed up with developers on anything that didn’t match.</p>
+</div>
+</section>
+
+<section data-screen-label="02 Understanding the product" style="max-width:1160px;margin:0 auto;padding:clamp(64px,9vw,112px) clamp(20px,4vw,48px) 0">
+<div style="display:flex;align-items:baseline;gap:18px;border-top:1.5px solid #141414;padding-top:18px;margin-bottom:32px"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:14px;color:#5A5A55">02</span><h2 style="margin:0;font-size:clamp(28px,3.4vw,44px);line-height:1.08;letter-spacing:-0.02em;font-weight:600">Understanding the product</h2></div>
+<p style="margin:0 0 28px;max-width:62ch;text-wrap:pretty">Everything in the product feeds one loop: you say what you need, the assistant turns it into something you can act on, and it lands in your plan.</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px">
+<div style="background:#FFFFFF;border:1px solid #E2E2DC;border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:8px"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;color:#5A5A55">01 →</span><div style="font-size:19px;font-weight:600">Talk</div><div style="font-size:15px;line-height:1.5;color:#3A3A36">Type what’s on your mind, in your own words.</div></div>
+<div style="background:#FFFFFF;border:1px solid #E2E2DC;border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:8px"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;color:#5A5A55">02 →</span><div style="font-size:19px;font-weight:600">Turn it into items</div><div style="font-size:15px;line-height:1.5;color:#3A3A36">The assistant creates tasks, events, goals and reminders.</div></div>
+<div style="background:#FFFFFF;border:1px solid #E2E2DC;border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:8px"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;color:#5A5A55">03 →</span><div style="font-size:19px;font-weight:600">See it in your plan</div><div style="font-size:15px;line-height:1.5;color:#3A3A36">Everything lands on the calendar, alongside connected calendars.</div></div>
+<div style="background:#FFFFFF;border:1px solid #E2E2DC;border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:8px"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;color:#5A5A55">04 ↺</span><div style="font-size:19px;font-weight:600">Personalise</div><div style="font-size:15px;line-height:1.5;color:#3A3A36">An assessment builds a profile that shapes suggestions.</div></div>
+</div>
+<p style="margin:28px 0 0;max-width:62ch;text-wrap:pretty">Two moments decide whether that loop works. The first few minutes, when the assistant has to explain itself and learn about you. And every day after, when you open the calendar to see what’s next. My work covered both, plus the prompt in between.</p>
+</section>
+
+<section data-screen-label="03 Starting point" style="max-width:1160px;margin:0 auto;padding:clamp(64px,9vw,112px) clamp(20px,4vw,48px) 0">
+<div style="display:flex;align-items:baseline;gap:18px;border-top:1.5px solid #141414;padding-top:18px;margin-bottom:32px"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:14px;color:#5A5A55">03</span><h2 style="margin:0;font-size:clamp(28px,3.4vw,44px);line-height:1.08;letter-spacing:-0.02em;font-weight:600">The starting point</h2></div>
+<p style="margin:0 0 28px;max-width:62ch;text-wrap:pretty">I started from the existing Figma designs and a UX audit of the app written by someone else, and worked from its findings. These are the ones my redesign addressed.</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:16px">
+<div style="background:#FFFFFF;border:1px solid #E2E2DC;border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:14px">
+<div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#5A5A55">From the audit · first use</div>
+<div style="display:flex;flex-direction:column;gap:10px;font-size:16px;line-height:1.5">
+<div style="display:flex;gap:12px"><span style="color:#8A8A84">—</span><span>The intro screens described the company and its philosophy, not what the app does for you.</span></div>
+<div style="display:flex;gap:12px"><span style="color:#8A8A84">—</span><span>Login and sign-up looked almost the same, which caused confusion.</span></div>
+<div style="display:flex;gap:12px"><span style="color:#8A8A84">—</span><span>Password requirements weren’t shown.</span></div>
+<div style="display:flex;gap:12px"><span style="color:#8A8A84">—</span><span>Form errors appeared inline and again in a snackbar.</span></div>
+</div>
+</div>
+<div style="background:#FFFFFF;border:1px solid #E2E2DC;border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:14px">
+<div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#5A5A55">From the audit · everyday planning</div>
+<div style="display:flex;flex-direction:column;gap:10px;font-size:16px;line-height:1.5">
+<div style="display:flex;gap:12px"><span style="color:#8A8A84">—</span><span>Switching calendar views was hidden in a dropdown.</span></div>
+<div style="display:flex;gap:12px"><span style="color:#8A8A84">—</span><span>A large date dominated the event list, while titles and times felt secondary.</span></div>
+<div style="display:flex;gap:12px"><span style="color:#8A8A84">—</span><span>Coloured lines and titles on cards had no obvious meaning.</span></div>
+<div style="display:flex;gap:12px"><span style="color:#8A8A84">—</span><span>Events without an objective just said “Not added”.</span></div>
+</div>
+</div>
+</div>
+<p style="margin:20px 0 0;font-size:15px;color:#5A5A55;max-width:70ch">The audit also covered the dashboard, tasks, goals, settings and the personality report. This case study only shows the parts I designed.</p>
+</section>
+
+<section data-screen-label="04 Design challenges" style="max-width:1160px;margin:0 auto;padding:clamp(64px,9vw,112px) clamp(20px,4vw,48px) 0">
+<div style="display:flex;align-items:baseline;gap:18px;border-top:1.5px solid #141414;padding-top:18px;margin-bottom:32px"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:14px;color:#5A5A55">04</span><h2 style="margin:0;font-size:clamp(28px,3.4vw,44px);line-height:1.08;letter-spacing:-0.02em;font-weight:600">Design challenges</h2><sc-if value="{{ notes }}" hint-placeholder-val="{{ true }}"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.04em;padding:1px 7px;border-radius:999px;background:#FFE58A;color:#3D3200;white-space:nowrap">DRAFT</span></sc-if></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px">
+<div style="border-top:3px solid #141414;padding-top:16px;display:flex;flex-direction:column;gap:8px"><div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#5A5A55">First meeting</div><div style="font-size:20px;line-height:1.35;font-weight:600;text-wrap:pretty">Explain what the assistant does before asking for anything, then make getting in, and back in, unambiguous.</div></div>
+<div style="border-top:3px solid #141414;padding-top:16px;display:flex;flex-direction:column;gap:8px"><div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#5A5A55">Everyday planning</div><div style="font-size:20px;line-height:1.35;font-weight:600;text-wrap:pretty">Make a day readable at a glance: what’s next, how long it takes, and what already happened.</div></div>
+<div style="border-top:3px solid #141414;padding-top:16px;display:flex;flex-direction:column;gap:8px"><div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#5A5A55">Talking to the assistant</div><div style="font-size:20px;line-height:1.35;font-weight:600;text-wrap:pretty">Keep the prompt predictable, and show clearly what the assistant made from your words.</div></div>
+</div>
+</section>
+
+<section data-screen-label="05 Approach" style="max-width:1160px;margin:0 auto;padding:clamp(64px,9vw,112px) clamp(20px,4vw,48px) 0">
+<div style="display:flex;align-items:baseline;gap:18px;border-top:1.5px solid #141414;padding-top:18px;margin-bottom:32px"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:14px;color:#5A5A55">05</span><h2 style="margin:0;font-size:clamp(28px,3.4vw,44px);line-height:1.08;letter-spacing:-0.02em;font-weight:600">Approach</h2></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:0;border:1px solid #E2E2DC;border-radius:16px;overflow:hidden;background:#FFFFFF">
+<div style="padding:22px;border-right:1px solid #E2E2DC;display:flex;flex-direction:column;gap:8px"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;color:#5A5A55">1</span><div style="font-size:18px;font-weight:600">Understand</div><div style="font-size:15px;line-height:1.5;color:#3A3A36">Walked through the existing screens and flows to see how each feature worked.</div></div>
+<div style="padding:22px;border-right:1px solid #E2E2DC;display:flex;flex-direction:column;gap:8px"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;color:#5A5A55">2</span><div style="font-size:18px;font-weight:600">Work from the audit</div><div style="font-size:15px;line-height:1.5;color:#3A3A36">Used its findings as the list of problems to solve in my areas.</div></div>
+<div style="padding:22px;border-right:1px solid #E2E2DC;display:flex;flex-direction:column;gap:8px"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;color:#5A5A55">3</span><div style="font-size:18px;font-weight:600">Redesign</div><div style="font-size:15px;line-height:1.5;color:#3A3A36">Reworked flows, layouts, components and states in Figma.</div></div>
+<div style="padding:22px;display:flex;flex-direction:column;gap:8px"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;color:#5A5A55">4</span><div style="font-size:18px;font-weight:600">Review the build</div><div style="font-size:15px;line-height:1.5;color:#3A3A36">Compared built screens with Figma, documented gaps and followed up with developers.</div></div>
+</div>
+</section>
+
+<section data-screen-label="06 Key design work" style="max-width:1160px;margin:0 auto;padding:clamp(64px,9vw,112px) clamp(20px,4vw,48px) 0">
+<div style="display:flex;align-items:baseline;gap:18px;border-top:1.5px solid #141414;padding-top:18px;margin-bottom:12px"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:14px;color:#5A5A55">06</span><h2 style="margin:0;font-size:clamp(28px,3.4vw,44px);line-height:1.08;letter-spacing:-0.02em;font-weight:600">Key design work</h2></div>
+<p style="margin:0;font-size:15px;color:#5A5A55;max-width:70ch">All screens are rebuilt with fictional data.</p>
+
+<div style="display:flex;flex-direction:column;gap:6px;margin:56px 0 32px"><div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#5A5A55">Chapter 1 of 3</div><div style="font-size:clamp(26px,3vw,36px);font-weight:600;letter-spacing:-0.015em;line-height:1.1">First meeting: onboarding and account access</div></div>
+
+<div style="display:flex;flex-direction:column;gap:clamp(56px,7vw,88px)">
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:clamp(28px,4vw,56px);align-items:center">
+<div style="display:flex;flex-direction:column;gap:18px">
+<h3 style="margin:0;font-size:clamp(22px,2.2vw,28px);line-height:1.2;letter-spacing:-0.01em;font-weight:600">Benefits first, brand story later</h3>
+<div style="display:grid;grid-template-columns:72px minmax(0,1fr);gap:12px 16px;font-size:16px;line-height:1.55">
+<div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#5A5A55;padding-top:3px">Before</div><div style="color:#3A3A36">The intro screens told the company’s story and philosophy.</div>
+<div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#5A5A55;padding-top:3px">Change</div><div>I rewrote them around what the app does for you, one benefit per screen, ending on a clear way to create an account or log in.</div>
+<div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#5A5A55;padding-top:3px">Why</div><div>The intro is where people decide whether the app is worth setting up. A concrete benefit answers that; a brand story doesn’t.<sc-if value="{{ notes }}" hint-placeholder-val="{{ true }}"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.04em;padding:1px 7px;border-radius:999px;background:#FFE58A;color:#3D3200;margin-left:8px;white-space:nowrap">DRAFT</span></sc-if></div>
+</div>
+</div>
+<figure style="margin:0;background:#ECEDE8;border-radius:24px;padding:28px 16px 20px;display:flex;flex-direction:column;align-items:center;gap:14px">
+<div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap">
+<div style="zoom:0.52"><dc-import name="WrenApp" screen="intro" locked="{{ true }}" hint-size="402px,874px"></dc-import></div>
+<div style="zoom:0.52"><dc-import name="WrenApp" screen="intro" preset="intro-3" locked="{{ true }}" hint-size="402px,874px"></dc-import></div>
+</div>
+<figcaption style="font-size:13px;color:#5A5A55;display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:center">Intro, first and last of three screens<sc-if value="{{ notes }}" hint-placeholder-val="{{ true }}"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.04em;padding:1px 7px;border-radius:999px;background:#FFE58A;color:#3D3200;white-space:nowrap">INTERPRETATION · NO REFERENCE</span></sc-if></figcaption>
+</figure>
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:clamp(28px,4vw,56px);align-items:center">
+<div style="display:flex;flex-direction:column;gap:18px">
+<h3 style="margin:0;font-size:clamp(22px,2.2vw,28px);line-height:1.2;letter-spacing:-0.01em;font-weight:600">Meeting the assistant</h3>
+<p style="margin:0;font-size:16px;line-height:1.55">The assistant introduces itself before it asks anything: what it will ask, how your answers are used, and how it should talk to you. The assessment then runs as a chat.</p>
+<div style="display:grid;grid-template-columns:72px minmax(0,1fr);gap:12px 16px;font-size:16px;line-height:1.55">
+<div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#5A5A55;padding-top:3px">Why</div><div>This is the first conversation people have with the product. Running the assessment as a chat shows how they’ll use the assistant every day, while giving it what it needs to personalise.<sc-if value="{{ notes }}" hint-placeholder-val="{{ true }}"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.04em;padding:1px 7px;border-radius:999px;background:#FFE58A;color:#3D3200;margin-left:8px;white-space:nowrap">DRAFT</span></sc-if></div>
+</div>
+</div>
+<figure style="margin:0;background:#ECEDE8;border-radius:24px;padding:28px 16px 20px;display:flex;flex-direction:column;align-items:center;gap:14px">
+<div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap">
+<div style="display:flex;flex-direction:column;align-items:center;gap:10px"><div style="zoom:0.52"><dc-import name="WrenApp" screen="hello" marks="{{ marks }}" locked="{{ true }}" hint-size="402px,874px"></dc-import></div><span style="font-size:13px;color:#5A5A55">Introduction</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:10px"><div style="zoom:0.52"><dc-import name="WrenApp" screen="assess" preset="assessment-mid" marks="{{ marks }}" locked="{{ true }}" hint-size="402px,874px"></dc-import></div><span style="font-size:13px;color:#5A5A55">Assessment</span></div>
+</div>
+</figure>
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:clamp(28px,4vw,56px);align-items:center">
+<div style="display:flex;flex-direction:column;gap:18px">
+<h3 style="margin:0;font-size:clamp(22px,2.2vw,28px);line-height:1.2;letter-spacing:-0.01em;font-weight:600">Sign-up and login that don’t look alike</h3>
+<div style="display:grid;grid-template-columns:72px minmax(0,1fr);gap:12px 16px;font-size:16px;line-height:1.55">
+<div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#5A5A55;padding-top:3px">Before</div><div style="color:#3A3A36">The two screens looked almost the same. Password rules weren’t shown, and errors appeared twice: inline and in a snackbar.</div>
+<div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#5A5A55;padding-top:3px">Change</div><div>Each screen has its own title, supporting line and header, so you know which one you’re on. Sign-up lists the password rules and ticks them off as you type, with a strength meter. Errors appear once, under the field they belong to.</div>
+<div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#5A5A55;padding-top:3px">Why</div><div>Landing on the wrong screen is a dead end for someone new. Showing the rules up front lets people get the password right first time, and one message in one place is easier to act on.<sc-if value="{{ notes }}" hint-placeholder-val="{{ true }}"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.04em;padding:1px 7px;border-radius:999px;background:#FFE58A;color:#3D3200;margin-left:8px;white-space:nowrap">DRAFT</span></sc-if></div>
+</div>
+</div>
+<figure style="margin:0;background:#ECEDE8;border-radius:24px;padding:28px 16px 20px;display:flex;flex-direction:column;align-items:center;gap:14px">
+<div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap">
+<div style="display:flex;flex-direction:column;align-items:center;gap:10px"><div style="zoom:0.52"><dc-import name="WrenApp" screen="signup" preset="signup-error" marks="{{ marks }}" locked="{{ true }}" hint-size="402px,874px"></dc-import></div><span style="font-size:13px;color:#5A5A55">Sign up</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:10px"><div style="zoom:0.52"><dc-import name="WrenApp" screen="login" preset="login-error" marks="{{ marks }}" locked="{{ true }}" hint-size="402px,874px"></dc-import></div><span style="font-size:13px;color:#5A5A55">Log in</span></div>
+</div>
+<sc-if value="{{ notes }}" hint-placeholder-val="{{ true }}"><figcaption style="font-size:13px;color:#5A5A55"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.04em;padding:1px 7px;border-radius:999px;background:#FFE58A;color:#3D3200;white-space:nowrap">HOW THEY DIFFER IS MY INTERPRETATION</span></figcaption></sc-if>
+</figure>
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:clamp(28px,4vw,56px);align-items:center">
+<div style="display:flex;flex-direction:column;gap:18px">
+<h3 style="margin:0;font-size:clamp(22px,2.2vw,28px);line-height:1.2;letter-spacing:-0.01em;font-weight:600">Recovery and success</h3>
+<div style="display:grid;grid-template-columns:72px minmax(0,1fr);gap:12px 16px;font-size:16px;line-height:1.55">
+<div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#5A5A55;padding-top:3px">Change</div><div>Forgot password uses the login layout, with a left-aligned heading, so it reads as part of the same flow. After sign-up, a success screen confirms the account and says what happens next.</div>
+<div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#5A5A55;padding-top:3px">Why</div><div>Both moments need reassurance: you’re still in the right place, and it worked.<sc-if value="{{ notes }}" hint-placeholder-val="{{ true }}"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.04em;padding:1px 7px;border-radius:999px;background:#FFE58A;color:#3D3200;margin-left:8px;white-space:nowrap">DRAFT</span></sc-if></div>
+</div>
+</div>
+<figure style="margin:0;background:#ECEDE8;border-radius:24px;padding:28px 16px 20px;display:flex;flex-direction:column;align-items:center;gap:14px">
+<div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap">
+<div style="display:flex;flex-direction:column;align-items:center;gap:10px"><div style="zoom:0.52"><dc-import name="WrenApp" screen="forgot" preset="forgot" locked="{{ true }}" hint-size="402px,874px"></dc-import></div><span style="font-size:13px;color:#5A5A55">Forgot password</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:10px"><div style="zoom:0.52"><dc-import name="WrenApp" screen="created" locked="{{ true }}" hint-size="402px,874px"></dc-import></div><span style="font-size:13px;color:#5A5A55">Account created</span></div>
+</div>
+</figure>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:6px;margin:clamp(72px,9vw,112px) 0 32px"><div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#5A5A55">Chapter 2 of 3</div><div style="font-size:clamp(26px,3vw,36px);font-weight:600;letter-spacing:-0.015em;line-height:1.1">Everyday planning: the calendar</div></div>
+
+<div style="display:flex;flex-direction:column;gap:clamp(56px,7vw,88px)">
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:clamp(28px,4vw,56px);align-items:center">
+<div style="display:flex;flex-direction:column;gap:18px">
+<h3 style="margin:0;font-size:clamp(22px,2.2vw,28px);line-height:1.2;letter-spacing:-0.01em;font-weight:600">A day you can read at a glance</h3>
+<div style="display:grid;grid-template-columns:72px minmax(0,1fr);gap:12px 16px;font-size:16px;line-height:1.55">
+<div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#5A5A55;padding-top:3px">Before</div><div style="color:#3A3A36">Views were hidden in a dropdown, and colours on cards had no clear meaning.</div>
+</div>
+<div style="display:grid;grid-template-columns:72px minmax(0,1fr);gap:12px 16px;font-size:16px;line-height:1.55">
+<div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#5A5A55;padding-top:3px">Why</div><div>On a calendar, position and size already carry meaning. Giving colour one job, status, lets people read a day without opening each event.<sc-if value="{{ notes }}" hint-placeholder-val="{{ true }}"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.04em;padding:1px 7px;border-radius:999px;background:#FFE58A;color:#3D3200;margin-left:8px;white-space:nowrap">DRAFT</span></sc-if></div>
+</div>
+</div>
+<figure style="margin:0;background:#ECEDE8;border-radius:24px;padding:28px 16px 20px;display:flex;flex-direction:column;align-items:center;gap:14px">
+<div style="zoom:0.64"><dc-import name="WrenApp" screen="events" marks="{{ marks }}" locked="{{ true }}" hint-size="402px,874px"></dc-import></div>
+<figcaption style="font-size:13px;color:#5A5A55">Day view, today at 9:41</figcaption>
+</figure>
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:clamp(28px,4vw,56px);align-items:center">
+<div style="display:flex;flex-direction:column;gap:18px">
+<h3 style="margin:0;font-size:clamp(22px,2.2vw,28px);line-height:1.2;letter-spacing:-0.01em;font-weight:600">Moving between dates</h3>
+<div style="display:grid;grid-template-columns:72px minmax(0,1fr);gap:12px 16px;font-size:16px;line-height:1.55">
+<div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#5A5A55;padding-top:3px">Why</div><div>Once you leave today it’s easy to lose your place. One tap brings you back.<sc-if value="{{ notes }}" hint-placeholder-val="{{ true }}"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.04em;padding:1px 7px;border-radius:999px;background:#FFE58A;color:#3D3200;margin-left:8px;white-space:nowrap">DRAFT</span></sc-if></div>
+</div>
+</div>
+<figure style="margin:0;background:#ECEDE8;border-radius:24px;padding:28px 16px 20px;display:flex;flex-direction:column;align-items:center;gap:14px">
+<div style="zoom:0.64"><dc-import name="WrenApp" screen="events" preset="events-month" marks="{{ marks }}" locked="{{ true }}" hint-size="402px,874px"></dc-import></div>
+<figcaption style="font-size:13px;color:#5A5A55">Month view, Thursday selected</figcaption>
+</figure>
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:clamp(28px,4vw,56px);align-items:center">
+<div style="display:flex;flex-direction:column;gap:18px">
+<h3 style="margin:0;font-size:clamp(22px,2.2vw,28px);line-height:1.2;letter-spacing:-0.01em;font-weight:600">A list that starts with today</h3>
+<div style="display:grid;grid-template-columns:72px minmax(0,1fr);gap:12px 16px;font-size:16px;line-height:1.55">
+<div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#5A5A55;padding-top:3px">Before</div><div style="color:#3A3A36">A large date dominated the list, while titles and times felt secondary. Events without an objective said “Not added”.</div>
+<div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#5A5A55;padding-top:3px">Change</div><div>Title and time lead each card, and the date moves into the group heading.</div>
+</div>
+<div style="display:grid;grid-template-columns:72px minmax(0,1fr);gap:12px 16px;font-size:16px;line-height:1.55">
+<div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#5A5A55;padding-top:3px">Why</div><div>“Not added” describes a gap. “Add objective” tells you what to do about it.<sc-if value="{{ notes }}" hint-placeholder-val="{{ true }}"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.04em;padding:1px 7px;border-radius:999px;background:#FFE58A;color:#3D3200;margin-left:8px;white-space:nowrap">DRAFT</span></sc-if></div>
+</div>
+</div>
+<figure style="margin:0;background:#ECEDE8;border-radius:24px;padding:28px 16px 20px;display:flex;flex-direction:column;align-items:center;gap:14px">
+<div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap">
+<div style="display:flex;flex-direction:column;align-items:center;gap:10px"><div style="zoom:0.52"><dc-import name="WrenApp" screen="events" preset="events-list" marks="{{ marks }}" locked="{{ true }}" hint-size="402px,874px"></dc-import></div><span style="font-size:13px;color:#5A5A55">List, detail</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:10px"><div style="zoom:0.52"><dc-import name="WrenApp" screen="events" preset="events-compact" locked="{{ true }}" hint-size="402px,874px"></dc-import></div><span style="font-size:13px;color:#5A5A55">List, compact</span></div>
+</div>
+</figure>
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:clamp(28px,4vw,56px);align-items:center">
+<div style="display:flex;flex-direction:column;gap:18px">
+<h3 style="margin:0;font-size:clamp(22px,2.2vw,28px);line-height:1.2;letter-spacing:-0.01em;font-weight:600">Event preview and details</h3>
+<div style="display:grid;grid-template-columns:72px minmax(0,1fr);gap:12px 16px;font-size:16px;line-height:1.55">
+<div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#5A5A55;padding-top:3px">Change</div><div>Tapping an event opens a read-only preview. Modify opens the full form.</div>
+</div>
+<div style="display:grid;grid-template-columns:72px minmax(0,1fr);gap:12px 16px;font-size:16px;line-height:1.55">
+<div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#5A5A55;padding-top:3px">Why</div><div>Most of the time people want to check an event, not edit it. A read-only preview makes accidental changes less likely.<sc-if value="{{ notes }}" hint-placeholder-val="{{ true }}"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.04em;padding:1px 7px;border-radius:999px;background:#FFE58A;color:#3D3200;margin-left:8px;white-space:nowrap">DRAFT</span></sc-if></div>
+</div>
+</div>
+<figure style="margin:0;background:#ECEDE8;border-radius:24px;padding:28px 16px 20px;display:flex;flex-direction:column;align-items:center;gap:14px">
+<div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap">
+<div style="display:flex;flex-direction:column;align-items:center;gap:10px"><div style="zoom:0.52"><dc-import name="WrenApp" screen="preview" preset="preview-past" marks="{{ marks }}" locked="{{ true }}" hint-size="402px,874px"></dc-import></div><span style="font-size:13px;color:#5A5A55">Preview of a past event</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:10px"><div style="zoom:0.52"><dc-import name="WrenApp" screen="details" preset="details" locked="{{ true }}" hint-size="402px,874px"></dc-import></div><span style="font-size:13px;color:#5A5A55">Details form</span></div>
+</div>
+</figure>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:6px;margin:clamp(72px,9vw,112px) 0 32px"><div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#5A5A55">Chapter 3 of 3</div><div style="font-size:clamp(26px,3vw,36px);font-weight:600;letter-spacing:-0.015em;line-height:1.1">Talking to the assistant</div></div>
+
+<div style="display:flex;flex-direction:column;gap:clamp(56px,7vw,88px)">
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:clamp(28px,4vw,56px);align-items:center">
+<div style="display:flex;flex-direction:column;gap:18px">
+<h3 style="margin:0;font-size:clamp(22px,2.2vw,28px);line-height:1.2;letter-spacing:-0.01em;font-weight:600">A prompt that takes only the space it needs</h3>
+<p style="margin:0;font-size:16px;line-height:1.55">The prompt opens from the centre of the tab bar and stays compact until there’s a conversation.</p>
+<div style="display:grid;grid-template-columns:72px minmax(0,1fr);gap:12px 16px;font-size:16px;line-height:1.55">
+<div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#5A5A55;padding-top:3px">Why</div><div>The prompt sits on top of your plan, so it shouldn’t cover more of it than it has to.<sc-if value="{{ notes }}" hint-placeholder-val="{{ true }}"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.04em;padding:1px 7px;border-radius:999px;background:#FFE58A;color:#3D3200;margin-left:8px;white-space:nowrap">DRAFT</span></sc-if></div>
+</div>
+</div>
+<figure style="margin:0;background:#ECEDE8;border-radius:24px;padding:28px 16px 20px;display:flex;flex-direction:column;align-items:center;gap:14px">
+<div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap">
+<div style="display:flex;flex-direction:column;align-items:center;gap:10px"><div style="zoom:0.52"><dc-import name="WrenApp" screen="events" preset="prompt-typing" marks="{{ marks }}" locked="{{ true }}" hint-size="402px,874px"></dc-import></div><span style="font-size:13px;color:#5A5A55">Typing</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:10px"><div style="zoom:0.52"><dc-import name="WrenApp" screen="events" preset="prompt-reply" locked="{{ true }}" hint-size="402px,874px"></dc-import></div><span style="font-size:13px;color:#5A5A55">After a reply</span></div>
+</div>
+<figcaption style="font-size:13px;color:#5A5A55">Sample replies for this demo.</figcaption>
+</figure>
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:clamp(28px,4vw,56px);align-items:center">
+<div style="display:flex;flex-direction:column;gap:18px">
+<h3 style="margin:0;font-size:clamp(22px,2.2vw,28px);line-height:1.2;letter-spacing:-0.01em;font-weight:600">Creating by typing</h3>
+<p style="margin:0;font-size:16px;line-height:1.55">In the create screen, you can type a sentence instead of filling in each field.</p>
+<div style="display:grid;grid-template-columns:72px minmax(0,1fr);gap:12px 16px;font-size:16px;line-height:1.55">
+<div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#5A5A55;padding-top:3px">Why</div><div>Seeing the filled-in form makes it clear what the assistant did with your words.<sc-if value="{{ notes }}" hint-placeholder-val="{{ true }}"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.04em;padding:1px 7px;border-radius:999px;background:#FFE58A;color:#3D3200;margin-left:8px;white-space:nowrap">DRAFT</span></sc-if></div>
+</div>
+</div>
+<figure style="margin:0;background:#ECEDE8;border-radius:24px;padding:28px 16px 20px;display:flex;flex-direction:column;align-items:center;gap:14px">
+<div style="zoom:0.64"><dc-import name="WrenApp" screen="create" preset="create-done" marks="{{ marks }}" locked="{{ true }}" hint-size="402px,874px"></dc-import></div>
+<figcaption style="font-size:13px;color:#5A5A55;display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:center">New event, filled in by the assistant<sc-if value="{{ notes }}" hint-placeholder-val="{{ true }}"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.04em;padding:1px 7px;border-radius:999px;background:#FFE58A;color:#3D3200;white-space:nowrap">CONFIRM BEHAVIOUR</span></sc-if></figcaption>
+</figure>
+</div>
+</div>
+</section>
+
+<section id="prototype" data-screen-label="07 Prototype" style="max-width:1160px;margin:0 auto;padding:clamp(64px,9vw,112px) clamp(20px,4vw,48px) 0">
+<div style="display:flex;align-items:baseline;gap:18px;border-top:1.5px solid #141414;padding-top:18px;margin-bottom:32px"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:14px;color:#5A5A55">07</span><h2 style="margin:0;font-size:clamp(28px,3.4vw,44px);line-height:1.08;letter-spacing:-0.02em;font-weight:600">Bringing the redesign to life: mobile prototype</h2></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(28px,4vw,56px);align-items:start">
+<div style="background:#ECEDE8;border-radius:28px;padding:32px 16px;display:flex;justify-content:center">
+<div style="zoom:0.82"><dc-import name="WrenApp" screen="{{ pScreen }}" preset="{{ pPreset }}" nonce="{{ pNonce }}" hint-size="402px,874px"></dc-import></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:24px">
+<p style="margin:0;text-wrap:pretty">A click-through prototype of the redesigned flows. The screens are rebuilt from my Figma designs with a placeholder brand and fictional data. Prototype interactions use sample content; no live service is connected.</p>
+<div style="display:flex;flex-direction:column;gap:12px">
+<div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#5A5A55">Jump to a flow</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px">
+<sc-for list="{{ flows }}" as="f" hint-placeholder-count="5"><button onClick="{{ f.go }}" style="height:40px;padding:0 16px;border-radius:999px;border:1.5px solid #141414;background:{{ f.bg }};color:{{ f.c }};font:600 15px 'Schibsted Grotesk',system-ui,sans-serif;cursor:pointer">{{ f.label }}</button></sc-for>
+<button onClick="{{ restart }}" style="height:40px;padding:0 16px;border-radius:999px;border:1.5px dashed #8A8A84;background:transparent;color:#5A5A55;font:600 15px 'Schibsted Grotesk',system-ui,sans-serif;cursor:pointer">Restart</button>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px">
+<div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#5A5A55">Things to try</div>
+<div style="display:flex;flex-direction:column;gap:10px;font-size:16px;line-height:1.5">
+<div style="display:flex;gap:12px"><span style="color:#8A8A84">—</span><span>Go through the intro, then create an account. Type a password to watch the rules tick off.</span></div>
+<div style="display:flex;gap:12px"><span style="color:#8A8A84">—</span><span>Answer the three assessment questions, or exit halfway.</span></div>
+<div style="display:flex;gap:12px"><span style="color:#8A8A84">—</span><span>In the calendar, switch Day and List, open the month, pick another date, then tap Today.</span></div>
+<div style="display:flex;gap:12px"><span style="color:#8A8A84">—</span><span>Tap an event to open its preview, then Modify.</span></div>
+<div style="display:flex;gap:12px"><span style="color:#8A8A84">—</span><span>Tap the centre button and send a message, or tap + and let the assistant fill in a new event.</span></div>
+</div>
+</div>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:8px;margin:clamp(56px,7vw,80px) 0 28px"><div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#5A5A55">Screen overview</div><div style="font-size:16px;color:#3A3A36">All rebuilt screens and states. Click one to open it in the prototype.</div></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:32px 16px;justify-items:center">
+<sc-for list="{{ screens }}" as="x" hint-placeholder-count="20">
+<div onClick="{{ x.go }}" style="display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer">
+<div style="zoom:0.34;pointer-events:none"><dc-import name="WrenApp" screen="{{ x.screen }}" preset="{{ x.preset }}" locked="{{ true }}" hint-size="402px,874px"></dc-import></div>
+<div style="font-size:13px;font-weight:600;text-align:center;line-height:1.3">{{ x.label }}</div>
+<sc-if value="{{ x.flag }}" hint-placeholder-val="{{ false }}"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.04em;padding:1px 6px;border-radius:999px;background:#FFE58A;color:#3D3200">INTERPRETATION</span></sc-if>
+</div>
+</sc-for>
+</div>
+</section>
+
+<section data-screen-label="08 Collaboration" style="max-width:1160px;margin:0 auto;padding:clamp(64px,9vw,112px) clamp(20px,4vw,48px) 0">
+<div style="display:flex;align-items:baseline;gap:18px;border-top:1.5px solid #141414;padding-top:18px;margin-bottom:32px"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:14px;color:#5A5A55">08</span><h2 style="margin:0;font-size:clamp(28px,3.4vw,44px);line-height:1.08;letter-spacing:-0.02em;font-weight:600">Design-to-development collaboration</h2></div>
+<p style="margin:0 0 28px;max-width:64ch;text-wrap:pretty">A redesign only counts if it survives the build. Once screens were built, I compared them with my Figma designs. Where the build differed, in the interface or in how something behaved, I documented the gap with a reference to the intended design, explained the correction, and followed up with the developers.</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:12px">
+<div style="background:#FFFFFF;border:1px solid #E2E2DC;border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:8px"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;color:#5A5A55">1</span><div style="font-size:18px;font-weight:600">Compare</div><div style="font-size:15px;line-height:1.5;color:#3A3A36">Built screens side by side with the Figma designs.</div></div>
+<div style="background:#FFFFFF;border:1px solid #E2E2DC;border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:8px"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;color:#5A5A55">2</span><div style="font-size:18px;font-weight:600">Document</div><div style="font-size:15px;line-height:1.5;color:#3A3A36">What differs, linked to the intended design.</div></div>
+<div style="background:#FFFFFF;border:1px solid #E2E2DC;border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:8px"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;color:#5A5A55">3</span><div style="font-size:18px;font-weight:600">Follow up</div><div style="font-size:15px;line-height:1.5;color:#3A3A36">Explain the correction and check in with developers on the fix.</div></div>
+</div>
+<sc-if value="{{ notes }}" hint-placeholder-val="{{ true }}"><div style="margin-top:16px;border:2px dashed #D9C25E;background:#FFF9DC;border-radius:16px;padding:28px;color:#3D3200;font-size:15px;line-height:1.5"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.04em;padding:1px 7px;border-radius:999px;background:#FFE58A;margin-right:8px">NEEDED</span>One real, anonymised example: a built screen next to your Figma design, what you logged, and how it was resolved. Without it, this section is a claim with no evidence.</div></sc-if>
+</section>
+
+<section data-screen-label="09 Outcomes" style="max-width:1160px;margin:0 auto;padding:clamp(64px,9vw,112px) clamp(20px,4vw,48px) 0">
+<div style="display:flex;align-items:baseline;gap:18px;border-top:1.5px solid #141414;padding-top:18px;margin-bottom:32px"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:14px;color:#5A5A55">09</span><h2 style="margin:0;font-size:clamp(28px,3.4vw,44px);line-height:1.08;letter-spacing:-0.02em;font-weight:600">Outcomes</h2></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:28px 56px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="margin:0;font-size:clamp(20px,2vw,24px);line-height:1.4;font-weight:600;text-wrap:pretty">The redesign shipped in the iOS app.</p>
+<p style="margin:0;color:#3A3A36;text-wrap:pretty">I don’t have post-launch data, so I’m not claiming numbers. This case study shows the design reasoning, not measured results.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;font-size:16px;line-height:1.5">
+<div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#5A5A55">What changed for people using it</div>
+<div style="display:flex;gap:12px"><span style="color:#8A8A84">—</span><span>New users see what the app does before they’re asked to sign up.</span></div>
+<div style="display:flex;gap:12px"><span style="color:#8A8A84">—</span><span>Sign-up and login are clearly different, with password rules and errors shown where they apply.</span></div>
+<div style="display:flex;gap:12px"><span style="color:#8A8A84">—</span><span>The calendar has a visible view switch, a Today shortcut, status lines, duration-sized cards and a current-time line.</span></div>
+<div style="display:flex;gap:12px"><span style="color:#8A8A84">—</span><span>The prompt and in-form creation show what the assistant did with your words.</span></div>
+</div>
+</div>
+</section>
+
+<section data-screen-label="10 Reflection" style="max-width:1160px;margin:0 auto;padding:clamp(64px,9vw,112px) clamp(20px,4vw,48px) 0">
+<div style="display:flex;align-items:baseline;gap:18px;border-top:1.5px solid #141414;padding-top:18px;margin-bottom:32px"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:14px;color:#5A5A55">10</span><h2 style="margin:0;font-size:clamp(28px,3.4vw,44px);line-height:1.08;letter-spacing:-0.02em;font-weight:600">Reflection</h2><sc-if value="{{ notes }}" hint-placeholder-val="{{ true }}"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.04em;padding:1px 7px;border-radius:999px;background:#FFE58A;color:#3D3200;white-space:nowrap">DRAFT · REWRITE IN YOUR WORDS</span></sc-if></div>
+<p style="margin:0;font-size:clamp(20px,2.2vw,26px);line-height:1.45;max-width:46ch;text-wrap:pretty">With a personal assistant, the interaction is only half the experience. People also need to understand what it will do with their words and find what it creates. Most of my work was about those moments: explaining the product, getting people in, and making the results of a conversation easy to see and check.</p>
+</section>
+
+<footer style="max-width:1160px;margin:clamp(64px,9vw,112px) auto 0;padding:24px clamp(20px,4vw,48px) 0;border-top:1px solid #DEDED8;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:14px;color:#5A5A55">
+<span>Swanand Kulkarni · UX Designer</span>
+<span>Product and client anonymised. Screens rebuilt with fictional data.</span>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const SCREENS = [
+  ['Intro', 'intro', '', true],
+  ['Intro, last screen', 'intro', 'intro-3', true],
+  ['Sign up', 'signup', ''],
+  ['Sign-up error', 'signup', 'signup-error'],
+  ['Log in', 'login', 'login-error'],
+  ['Forgot password', 'forgot', 'forgot'],
+  ['Email sent', 'sent', 'sent'],
+  ['Account created', 'created', ''],
+  ['Meet the assistant', 'hello', ''],
+  ['Assessment', 'assess', 'assessment-mid'],
+  ['Exit assessment', 'assess', 'assessment-exit'],
+  ['Calendar: day', 'events', ''],
+  ['Calendar: month', 'events', 'events-month'],
+  ['Calendar: list', 'events', 'events-list'],
+  ['List: compact', 'events', 'events-compact'],
+  ['Event preview', 'preview', 'preview-past'],
+  ['Event details', 'details', 'details'],
+  ['Prompt', 'events', 'prompt-typing'],
+  ['Prompt reply', 'events', 'prompt-reply'],
+  ['Create by typing', 'create', 'create-done']
+];
+const FLOWS = [
+  ['Onboarding', 'intro', ''],
+  ['Sign-up & login', 'signup', ''],
+  ['Assessment', 'hello', ''],
+  ['Calendar', 'events', ''],
+  ['Assistant', 'events', 'prompt-typing']
+];
+
+class Component extends DCLogic {
+  state = { screen: 'intro', preset: '', nonce: 0, flow: 'Onboarding' };
+
+  jump(screen, preset, flow, scroll) {
+    this.setState(s => ({ screen, preset, nonce: s.nonce + 1, flow }));
+    if (scroll) {
+      const el = document.getElementById('prototype');
+      if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 16, behavior: 'smooth' });
+    }
+  }
+
+  renderVals() {
+    const S = this.state;
+    return {
+      notes: false, marks: false,
+      pScreen: S.screen, pPreset: S.preset, pNonce: S.nonce,
+      flows: FLOWS.map(([label, sc, pr]) => ({ key: label, label, bg: S.flow === label ? '#141414' : 'transparent', c: S.flow === label ? '#FFFFFF' : '#141414', go: () => this.jump(sc, pr, label) })),
+      restart: () => this.jump('intro', '', 'Onboarding'),
+      screens: SCREENS.map(([label, sc, pr]) => ({ key: label, label, screen: sc, preset: pr, flag: false, go: () => this.jump(sc, pr, '', true) }))
+    };
+  }
+}
+</script>
+</body>
+</html>
