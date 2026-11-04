@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'New Spirit';src:url('./fonts/NewSpirit-Light.otf') format('opentype');font-weight:300;font-display:swap}
+@font-face{font-family:'New Spirit';src:url('./fonts/NewSpirit-Regular.otf') format('opentype');font-weight:400;font-display:swap}
+@font-face{font-family:'New Spirit';src:url('./fonts/NewSpirit-Medium.otf') format('opentype');font-weight:500;font-display:swap}
+@font-face{font-family:'New Spirit';src:url('./fonts/NewSpirit-SemiBold.otf') format('opentype');font-weight:600;font-display:swap}
+@keyframes wrenDot{0%,80%,100%{opacity:.25;transform:translateY(0)}40%{opacity:1;transform:translateY(-3px)}}
+</style>
+</helmet>
+<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" keyboard="{{ kb }}" hint-size="402px,874px">
+<div style="position:relative;height:100%;background:#F4F4EF;color:#1D2321;font-family:Figtree,system-ui,sans-serif;font-size:15px;line-height:1.35;overflow:hidden;text-align:left">
+
+<sc-if value="{{ s.intro }}" hint-placeholder-val="{{ true }}">
+<div style="height:100%;box-sizing:border-box;display:flex;flex-direction:column;padding:58px 0 44px;background:linear-gradient(180deg,#E3EEE7 0%,#F4F4EF 62%)">
+<div style="display:flex;align-items:center;justify-content:space-between;padding:6px 24px">
+<div style="display:flex;align-items:center;gap:8px">
+<div style="width:24px;height:24px;border-radius:50%;background:#2D6151;position:relative"><div style="position:absolute;width:8px;height:8px;border-radius:50%;background:#F4F4EF;top:5px;right:5px"></div></div>
+<div style="font-family:'New Spirit',Georgia,serif;font-size:20px;font-weight:500">Wren</div>
+</div>
+<button onClick="{{ toLogin }}" style="border:0;background:none;padding:8px 0;font:600 15px Figtree,system-ui,sans-serif;color:#2D6151;cursor:pointer">Log in</button>
+</div>
+<div style="flex:1;display:flex;align-items:center;justify-content:center;padding:0 28px">
+<sc-if value="{{ v0 }}" hint-placeholder-val="{{ true }}">
+<div style="width:100%;display:flex;flex-direction:column;gap:14px">
+<div style="align-self:flex-end;background:#D7E7DE;padding:12px 16px;border-radius:18px 18px 4px 18px;font-size:16px">Dentist on Friday at 4</div>
+<div style="display:flex;gap:10px;align-items:flex-start">
+<div style="width:30px;height:30px;flex:none;border-radius:50%;background:#2D6151;position:relative"><div style="position:absolute;width:10px;height:10px;border-radius:50%;background:#F4F4EF;top:6px;right:6px"></div></div>
+<div style="flex:1;background:#FFFFFF;border:1px solid #E2E4DE;border-radius:4px 18px 18px 18px;padding:12px 14px;display:flex;flex-direction:column;gap:10px;box-shadow:0 8px 24px rgba(29,35,33,.07)">
+<div style="font-size:14px;color:#59615D">Added to your calendar.</div>
+<div style="display:flex;border-radius:8px;overflow:hidden;background:#F4F4EF;border:1px solid #E2E4DE"><div style="width:3px;background:#2D6151"></div><div style="padding:8px 10px;display:flex;flex-direction:column;gap:2px"><div style="font-weight:600;font-size:14px">Dentist</div><div style="font-size:12px;color:#59615D">Fri, 6 Nov · 4:00 – 4:30 PM</div></div></div>
+</div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ v1 }}" hint-placeholder-val="{{ false }}">
+<div style="width:100%;background:#FFFFFF;border:1px solid #E2E4DE;border-radius:18px;padding:14px 14px 16px;box-shadow:0 8px 24px rgba(29,35,33,.07);display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-family:'New Spirit',Georgia,serif;font-size:17px;font-weight:600;color:#2D6151">Today</span><span style="font-size:13px;color:#59615D">Tue, 3 Nov</span></div>
+<div style="display:grid;grid-template-columns:40px 1fr;gap:8px;align-items:start;font-size:12px;color:#8B928E">
+<div style="padding-top:7px">9:30</div>
+<div style="display:flex;height:60px;border-radius:8px;overflow:hidden;background:#FFFBF0;border:1px solid #EED9A6"><div style="width:3px;background:#C98A12"></div><div style="padding:7px 10px;display:flex;flex-direction:column;gap:2px"><div style="font-size:14px;font-weight:600;color:#1D2321">Design review</div><div style="color:#59615D">9:30 – 10:15 AM</div></div></div>
+<div style="padding-top:5px">10:30</div>
+<div style="display:flex;height:26px;border-radius:6px;overflow:hidden;background:#FFFFFF;border:1px solid #E2E4DE"><div style="width:3px;background:#2D6151"></div><div style="flex:1;padding:0 10px;display:flex;align-items:center;justify-content:space-between"><span style="font-size:13px;font-weight:600;color:#1D2321">Call pharmacy</span><span>5 min</span></div></div>
+<div style="padding-top:7px">12:30</div>
+<div style="display:flex;height:46px;border-radius:8px;overflow:hidden;background:#FFFFFF;border:1px solid #E2E4DE"><div style="width:3px;background:#2D6151"></div><div style="padding:6px 10px;display:flex;flex-direction:column;gap:2px"><div style="font-size:14px;font-weight:600;color:#1D2321">Lunch with Leo</div><div style="color:#59615D">12:30 – 1:30 PM</div></div></div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ v2 }}" hint-placeholder-val="{{ false }}">
+<div style="width:100%;background:#FFFFFF;border:1px solid #E2E4DE;border-radius:18px;padding:16px;box-shadow:0 8px 24px rgba(29,35,33,.07);display:flex;flex-direction:column;gap:10px">
+<div style="font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#59615D">Question 2 of 3</div>
+<div style="font-size:16px;font-weight:600">I do my best work when…</div>
+<div style="padding:11px 12px;border-radius:10px;background:#E2EEE8;border:1.5px solid #2D6151;font-size:14px">My day is mapped out in advance</div>
+<div style="padding:11px 12px;border-radius:10px;border:1px solid #E2E4DE;font-size:14px">I have room to decide as I go</div>
+</div>
+</sc-if>
+</div>
+<div style="position:relative;padding:0 28px;display:flex;flex-direction:column;gap:10px;min-height:150px;margin-top:20px">
+<div style="font-family:'New Spirit',Georgia,serif;font-size:32px;line-height:1.1;font-weight:500;text-wrap:balance">{{ slide.title }}</div>
+<div style="font-size:16px;line-height:1.45;color:#59615D;text-wrap:pretty">{{ slide.body }}</div>
+<sc-if value="{{ mk.intro }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;width:24px;height:24px;border-radius:50%;background:#2B59FF;color:#FFFFFF;font:700 13px/24px Figtree,system-ui,sans-serif;text-align:center;box-shadow:0 0 0 4px rgba(43,89,255,.22);z-index:25;pointer-events:none;top:-14px;right:18px">1</div></sc-if>
+</div>
+<div style="display:flex;gap:6px;padding:10px 28px 22px">
+<sc-for list="{{ dots }}" as="d" hint-placeholder-count="3"><div onClick="{{ d.go }}" style="height:6px;border-radius:3px;width:{{ d.w }}px;background:{{ d.c }};transition:width .2s;cursor:pointer"></div></sc-for>
+</div>
+<div style="padding:0 24px;display:flex;gap:10px">
+<sc-if value="{{ notFirst }}" hint-placeholder-val="{{ false }}"><button onClick="{{ introBack }}" style="width:52px;height:52px;flex:none;border:1.5px solid #2D6151;border-radius:14px;background:transparent;color:#2D6151;display:flex;align-items:center;justify-content:center;cursor:pointer"><svg width="22" height="22" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M15 18l-6-6 6-6"></path></svg></button></sc-if>
+<button onClick="{{ introNext }}" style="flex:1;height:52px;border:0;border-radius:14px;background:#2D6151;color:#FFFFFF;font:600 17px 'New Spirit',Georgia,serif;cursor:pointer">{{ slide.cta }}</button>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ s.signup }}" hint-placeholder-val="{{ false }}">
+<div style="height:100%;display:flex;flex-direction:column;background:#E3EEE7">
+<div style="position:relative;height:176px;flex:none;overflow:hidden">
+<div style="position:absolute;width:160px;height:160px;border-radius:50%;border:1.5px solid rgba(29,35,33,.3);left:-36px;top:56px"></div>
+<div style="position:absolute;width:84px;height:84px;border-radius:50%;background:#1D2321;left:94px;top:74px"></div>
+<div style="position:absolute;width:220px;height:220px;border-radius:50%;background:#2D6151;right:-60px;top:22px"></div>
+</div>
+<div style="flex:1;min-height:0;margin-top:-34px;position:relative;background:#FBFBF8;border-radius:34px 0 0 0;padding:26px 28px 40px;display:flex;flex-direction:column;gap:16px;overflow:auto">
+<div style="position:relative">
+<div style="font-family:'New Spirit',Georgia,serif;font-size:30px;line-height:1.1;font-weight:500">Create your account</div>
+<div style="font-size:15px;color:#59615D;margin-top:6px">New to Wren? Start here.</div>
+<sc-if value="{{ mk.su }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;width:24px;height:24px;border-radius:50%;background:#2B59FF;color:#FFFFFF;font:700 13px/24px Figtree,system-ui,sans-serif;text-align:center;box-shadow:0 0 0 4px rgba(43,89,255,.22);z-index:25;pointer-events:none;top:2px;right:0">1</div></sc-if>
+</div>
+<div style="position:relative;display:flex;flex-direction:column;gap:2px">
+<div style="font-size:13px;font-weight:600;color:#59615D">Email</div>
+<input value="{{ email }}" onChange="{{ onEmail }}" onBlur="{{ touchSignup }}" placeholder="name@example.com" style="border:0;border-bottom:1.5px solid {{ su.emailLine }};border-radius:0;background:transparent;padding:8px 0;font:500 16px Figtree,system-ui,sans-serif;color:#1D2321;outline:none">
+<sc-if value="{{ su.emailErr }}" hint-placeholder-val="{{ false }}"><div style="display:flex;gap:6px;align-items:flex-start;font-size:13px;line-height:1.35;color:#B5452F;margin-top:5px"><svg width="15" height="15" viewBox="0 0 24 24" style="flex:none;margin-top:1px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5M12 16h.01"></path></svg>{{ su.emailErrText }}</div></sc-if>
+<sc-if value="{{ mk.su }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;width:24px;height:24px;border-radius:50%;background:#2B59FF;color:#FFFFFF;font:700 13px/24px Figtree,system-ui,sans-serif;text-align:center;box-shadow:0 0 0 4px rgba(43,89,255,.22);z-index:25;pointer-events:none;top:24px;right:0">2</div></sc-if>
+</div>
+<div style="display:flex;flex-direction:column;gap:2px">
+<div style="font-size:13px;font-weight:600;color:#59615D">Password</div>
+<div style="display:flex;align-items:center;border-bottom:1.5px solid #C9CEC9">
+<input type="{{ pwType }}" value="{{ pw }}" onChange="{{ onPw }}" placeholder="Create a password" style="flex:1;min-width:0;border:0;background:transparent;padding:8px 0;font:500 16px Figtree,system-ui,sans-serif;color:#1D2321;outline:none">
+<button onClick="{{ togglePw }}" style="border:0;background:none;color:#59615D;padding:4px;cursor:pointer;display:flex"><svg width="20" height="20" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"></path><circle cx="12" cy="12" r="3"></circle></svg></button>
+</div>
+</div>
+<div style="position:relative;display:flex;flex-direction:column;gap:8px;background:#EEF1EC;border-radius:12px;padding:12px 14px">
+<div style="display:flex;align-items:center;justify-content:space-between;font-size:13px"><span style="font-weight:600;color:#59615D">Password strength</span><span style="font-weight:700;color:{{ su.strengthC }}">{{ su.strength }}</span></div>
+<div style="display:flex;gap:4px"><sc-for list="{{ su.seg }}" as="g" hint-placeholder-count="3"><div style="flex:1;height:4px;border-radius:2px;background:{{ g.c }}"></div></sc-for></div>
+<sc-for list="{{ su.rules }}" as="r" hint-placeholder-count="3">
+<div style="display:flex;align-items:center;gap:8px;font-size:13px;color:{{ r.c }}">
+<sc-if value="{{ r.ok }}" hint-placeholder-val="{{ false }}"><div style="width:16px;height:16px;flex:none;border-radius:50%;background:#2D6151;color:#FFFFFF;display:flex;align-items:center;justify-content:center"><svg width="11" height="11" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round"><path d="M5 12l5 5L19 7"></path></svg></div></sc-if>
+<sc-if value="{{ r.no }}" hint-placeholder-val="{{ true }}"><div style="width:16px;height:16px;flex:none;box-sizing:border-box;border-radius:50%;border:1.5px solid #B3BAB6"></div></sc-if>
+<span>{{ r.label }}</span>
+</div>
+</sc-for>
+<sc-if value="{{ mk.su }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;width:24px;height:24px;border-radius:50%;background:#2B59FF;color:#FFFFFF;font:700 13px/24px Figtree,system-ui,sans-serif;text-align:center;box-shadow:0 0 0 4px rgba(43,89,255,.22);z-index:25;pointer-events:none;top:-10px;right:-10px">3</div></sc-if>
+</div>
+<button onClick="{{ submitSignup }}" style="height:52px;flex:none;border:0;border-radius:14px;background:{{ su.btnBg }};color:#FFFFFF;font:600 17px 'New Spirit',Georgia,serif;cursor:pointer">Create account</button>
+<div style="display:flex;align-items:center;gap:10px;font-size:13px;color:#8B928E"><div style="flex:1;height:1px;background:#E2E4DE"></div><span>or sign up with</span><div style="flex:1;height:1px;background:#E2E4DE"></div></div>
+<div style="display:flex;gap:10px">
+<button style="flex:1;height:46px;border:1px solid #D5D9D3;border-radius:12px;background:#FFFFFF;font:600 15px Figtree,system-ui,sans-serif;color:#1D2321">Google</button>
+<button style="flex:1;height:46px;border:1px solid #D5D9D3;border-radius:12px;background:#FFFFFF;font:600 15px Figtree,system-ui,sans-serif;color:#1D2321">Apple</button>
+</div>
+<div style="text-align:center;font-size:14px;color:#59615D">Already have an account? <span onClick="{{ toLogin }}" style="color:#2D6151;font-weight:700;cursor:pointer">Log in</span></div>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ s.login }}" hint-placeholder-val="{{ false }}">
+<div style="height:100%;display:flex;flex-direction:column;background:#E9EAE4">
+<div style="position:relative;height:176px;flex:none;overflow:hidden">
+<div style="position:absolute;width:210px;height:210px;border-radius:50%;background:#1D2321;left:-70px;top:24px"></div>
+<div style="position:absolute;width:76px;height:76px;border-radius:50%;background:#2D6151;left:166px;top:70px"></div>
+<div style="position:absolute;width:150px;height:150px;border-radius:50%;border:1.5px solid rgba(29,35,33,.3);right:-34px;top:50px"></div>
+</div>
+<div style="flex:1;min-height:0;margin-top:-34px;position:relative;background:#FBFBF8;border-radius:0 34px 0 0;padding:26px 28px 34px;display:flex;flex-direction:column;gap:18px;overflow:auto">
+<div style="position:relative">
+<div style="font-family:'New Spirit',Georgia,serif;font-size:30px;line-height:1.1;font-weight:500">Welcome back</div>
+<div style="font-size:15px;color:#59615D;margin-top:6px">Log in to pick up where you left off.</div>
+<sc-if value="{{ mk.li }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;width:24px;height:24px;border-radius:50%;background:#2B59FF;color:#FFFFFF;font:700 13px/24px Figtree,system-ui,sans-serif;text-align:center;box-shadow:0 0 0 4px rgba(43,89,255,.22);z-index:25;pointer-events:none;top:2px;right:0">1</div></sc-if>
+</div>
+<div style="display:flex;flex-direction:column;gap:2px">
+<div style="font-size:13px;font-weight:600;color:#59615D">Email</div>
+<input value="{{ lEmail }}" onChange="{{ onLEmail }}" placeholder="name@example.com" style="border:0;border-bottom:1.5px solid {{ li.emailLine }};border-radius:0;background:transparent;padding:8px 0;font:500 16px Figtree,system-ui,sans-serif;color:#1D2321;outline:none">
+<sc-if value="{{ li.emailErr }}" hint-placeholder-val="{{ false }}"><div style="display:flex;gap:6px;align-items:flex-start;font-size:13px;line-height:1.35;color:#B5452F;margin-top:5px"><svg width="15" height="15" viewBox="0 0 24 24" style="flex:none;margin-top:1px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5M12 16h.01"></path></svg>{{ li.err }}</div></sc-if>
+</div>
+<div style="position:relative;display:flex;flex-direction:column;gap:2px">
+<div style="font-size:13px;font-weight:600;color:#59615D">Password</div>
+<div style="display:flex;align-items:center;border-bottom:1.5px solid {{ li.pwLine }}">
+<input type="{{ pwType }}" value="{{ lPw }}" onChange="{{ onLPw }}" placeholder="Your password" style="flex:1;min-width:0;border:0;background:transparent;padding:8px 0;font:500 16px Figtree,system-ui,sans-serif;color:#1D2321;outline:none">
+<button onClick="{{ togglePw }}" style="border:0;background:none;color:#59615D;padding:4px;cursor:pointer;display:flex"><svg width="20" height="20" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"></path><circle cx="12" cy="12" r="3"></circle></svg></button>
+</div>
+<sc-if value="{{ li.pwErr }}" hint-placeholder-val="{{ false }}"><div style="display:flex;gap:6px;align-items:flex-start;font-size:13px;line-height:1.35;color:#B5452F;margin-top:5px"><svg width="15" height="15" viewBox="0 0 24 24" style="flex:none;margin-top:1px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5M12 16h.01"></path></svg>{{ li.err }}</div></sc-if>
+<sc-if value="{{ mk.li }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;width:24px;height:24px;border-radius:50%;background:#2B59FF;color:#FFFFFF;font:700 13px/24px Figtree,system-ui,sans-serif;text-align:center;box-shadow:0 0 0 4px rgba(43,89,255,.22);z-index:25;pointer-events:none;bottom:-6px;right:-12px">2</div></sc-if>
+</div>
+<div style="position:relative;display:flex;justify-content:flex-end;margin-top:-6px"><span onClick="{{ toForgot }}" style="font-size:14px;font-weight:700;color:#2D6151;cursor:pointer">Forgot password?</span><sc-if value="{{ mk.li }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;width:24px;height:24px;border-radius:50%;background:#2B59FF;color:#FFFFFF;font:700 13px/24px Figtree,system-ui,sans-serif;text-align:center;box-shadow:0 0 0 4px rgba(43,89,255,.22);z-index:25;pointer-events:none;top:-3px;right:134px">3</div></sc-if></div>
+<button onClick="{{ submitLogin }}" style="height:52px;flex:none;border:0;border-radius:14px;background:#2D6151;color:#FFFFFF;font:600 17px 'New Spirit',Georgia,serif;cursor:pointer">Log in</button>
+<div style="display:flex;align-items:center;gap:10px;font-size:13px;color:#8B928E"><div style="flex:1;height:1px;background:#E2E4DE"></div><span>or log in with</span><div style="flex:1;height:1px;background:#E2E4DE"></div></div>
+<div style="display:flex;gap:10px">
+<button style="flex:1;height:46px;border:1px solid #D5D9D3;border-radius:12px;background:#FFFFFF;font:600 15px Figtree,system-ui,sans-serif;color:#1D2321">Google</button>
+<button style="flex:1;height:46px;border:1px solid #D5D9D3;border-radius:12px;background:#FFFFFF;font:600 15px Figtree,system-ui,sans-serif;color:#1D2321">Apple</button>
+</div>
+<div style="text-align:center;font-size:14px;color:#59615D">New to Wren? <span onClick="{{ toSignup }}" style="color:#2D6151;font-weight:700;cursor:pointer">Create an account</span></div>
+<div style="margin-top:auto;text-align:center;font-size:12px;color:#8B928E">Privacy Policy · Terms of Use · Cookie Policy</div>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ s.forgot }}" hint-placeholder-val="{{ false }}">
+<div style="height:100%;display:flex;flex-direction:column;background:#E9EAE4">
+<div style="position:relative;height:176px;flex:none;overflow:hidden">
+<div style="position:absolute;width:210px;height:210px;border-radius:50%;background:#1D2321;left:-70px;top:24px"></div>
+<div style="position:absolute;width:76px;height:76px;border-radius:50%;background:#2D6151;left:166px;top:70px"></div>
+<div style="position:absolute;width:150px;height:150px;border-radius:50%;border:1.5px solid rgba(29,35,33,.3);right:-34px;top:50px"></div>
+<button onClick="{{ toLogin }}" style="position:absolute;z-index:2;left:16px;top:58px;width:40px;height:40px;border:0;border-radius:50%;background:rgba(251,251,248,.94);color:#1D2321;display:flex;align-items:center;justify-content:center;cursor:pointer"><svg width="22" height="22" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M15 18l-6-6 6-6"></path></svg></button>
+</div>
+<div style="flex:1;min-height:0;margin-top:-34px;position:relative;background:#FBFBF8;border-radius:0 34px 0 0;padding:26px 28px 40px;display:flex;flex-direction:column;gap:18px;overflow:auto">
+<div style="position:relative">
+<div style="font-family:'New Spirit',Georgia,serif;font-size:30px;line-height:1.1;font-weight:500">Forgot password</div>
+<div style="font-size:15px;line-height:1.45;color:#59615D;margin-top:6px;max-width:300px">Enter the email you signed up with. We’ll send you a code to reset your password.</div>
+<sc-if value="{{ mk.fp }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;width:24px;height:24px;border-radius:50%;background:#2B59FF;color:#FFFFFF;font:700 13px/24px Figtree,system-ui,sans-serif;text-align:center;box-shadow:0 0 0 4px rgba(43,89,255,.22);z-index:25;pointer-events:none;top:2px;right:0">1</div></sc-if>
+</div>
+<div style="display:flex;flex-direction:column;gap:2px">
+<div style="font-size:13px;font-weight:600;color:#59615D">Email</div>
+<input value="{{ fEmail }}" onChange="{{ onFEmail }}" placeholder="name@example.com" style="border:0;border-bottom:1.5px solid {{ fp.line }};border-radius:0;background:transparent;padding:8px 0;font:500 16px Figtree,system-ui,sans-serif;color:#1D2321;outline:none">
+<sc-if value="{{ fp.err }}" hint-placeholder-val="{{ false }}"><div style="display:flex;gap:6px;align-items:flex-start;font-size:13px;line-height:1.35;color:#B5452F;margin-top:5px"><svg width="15" height="15" viewBox="0 0 24 24" style="flex:none;margin-top:1px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5M12 16h.01"></path></svg>{{ fp.errText }}</div></sc-if>
+</div>
+<button onClick="{{ sendCode }}" style="height:52px;flex:none;border:0;border-radius:14px;background:#2D6151;color:#FFFFFF;font:600 17px 'New Spirit',Georgia,serif;cursor:pointer">Send code</button>
+<div style="text-align:center;font-size:14px"><span onClick="{{ toLogin }}" style="color:#2D6151;font-weight:700;cursor:pointer">Back to log in</span></div>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ s.sent }}" hint-placeholder-val="{{ false }}">
+<div style="height:100%;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:60px 32px 44px;text-align:center;background:#FBFBF8">
+<div style="width:112px;height:112px;border-radius:50%;background:#E2EEE8;display:flex;align-items:center;justify-content:center"><div style="width:72px;height:72px;border-radius:50%;background:#2D6151;color:#FFFFFF;display:flex;align-items:center;justify-content:center"><svg width="34" height="34" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round"><path d="M5 12l5 5L19 7"></path></svg></div></div>
+<div style="font-family:'New Spirit',Georgia,serif;font-size:30px;line-height:1.1;font-weight:500">Email sent</div>
+<div style="font-size:15px;line-height:1.5;color:#59615D;text-wrap:pretty">We sent a reset code to <span style="color:#1D2321;font-weight:600">{{ sentTo }}</span>. It can take a minute to arrive.</div>
+<div style="width:100%;display:flex;flex-direction:column;gap:14px;margin-top:20px">
+<button onClick="{{ toLogin }}" style="height:52px;border:0;border-radius:14px;background:#2D6151;color:#FFFFFF;font:600 17px 'New Spirit',Georgia,serif;cursor:pointer">Back to log in</button>
+<div style="font-size:14px;color:#59615D">Didn’t get it? <span onClick="{{ resend }}" style="color:#2D6151;font-weight:700;cursor:pointer">Send again</span></div>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ s.created }}" hint-placeholder-val="{{ false }}">
+<div style="height:100%;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:60px 32px 44px;text-align:center;background:linear-gradient(180deg,#E3EEE7 0%,#FBFBF8 60%)">
+<div style="width:112px;height:112px;border-radius:50%;background:#D7E7DE;display:flex;align-items:center;justify-content:center"><div style="width:72px;height:72px;border-radius:50%;background:#2D6151;color:#FFFFFF;display:flex;align-items:center;justify-content:center"><svg width="34" height="34" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round"><path d="M5 12l5 5L19 7"></path></svg></div></div>
+<div style="font-family:'New Spirit',Georgia,serif;font-size:30px;line-height:1.1;font-weight:500">Account created</div>
+<div style="font-size:15px;line-height:1.5;color:#59615D;text-wrap:pretty">You’re all set. Next, Wren will ask a few questions to learn how you like to plan.</div>
+<button onClick="{{ toHello }}" style="width:100%;height:52px;margin-top:20px;border:0;border-radius:14px;background:#2D6151;color:#FFFFFF;font:600 17px 'New Spirit',Georgia,serif;cursor:pointer">Continue</button>
+</div>
+</sc-if>
+
+<sc-if value="{{ s.hello }}" hint-placeholder-val="{{ false }}">
+<div style="height:100%;overflow:auto;box-sizing:border-box;padding:64px 20px 40px;background:linear-gradient(180deg,#E3EEE7 0%,#F4F4EF 55%);display:flex;flex-direction:column;gap:16px">
+<div style="text-align:center;font-family:'New Spirit',Georgia,serif;font-size:34px;line-height:1.1;font-weight:600;color:#2D6151">Hi, I’m Wren!</div>
+<div style="align-self:center;width:164px;height:164px;flex:none;border-radius:50%;border:1px solid #C5D8CD;display:flex;align-items:center;justify-content:center"><div style="width:122px;height:122px;border-radius:50%;border:1px solid #B3CCBF;display:flex;align-items:center;justify-content:center"><div style="width:78px;height:78px;border-radius:50%;background:#2D6151;position:relative;box-shadow:0 10px 24px rgba(45,97,81,.3)"><div style="position:absolute;width:24px;height:24px;border-radius:50%;background:#F4F4EF;top:15px;right:15px"></div></div></div></div>
+<div style="text-align:center;font-family:'New Spirit',Georgia,serif;font-size:18px;line-height:1.3;color:#2D6151;padding:0 28px">I’ll learn your style and help you structure your day.</div>
+<div style="position:relative;display:grid;grid-template-columns:1fr 1fr;gap:10px">
+<div style="background:rgba(255,255,255,.75);border:1px solid #E2E4DE;border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:6px">
+<div style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:#2D6151"><svg width="16" height="16" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M4 5h16v11H9l-5 4z"></path></svg>To begin</div>
+<div style="font-size:12px;line-height:1.45;color:#3B423F">I’ll ask a few quick questions about how you work. You can skip or change anything later.</div>
+</div>
+<div style="background:rgba(255,255,255,.75);border:1px solid #E2E4DE;border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:6px">
+<div style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:#2D6151"><svg width="16" height="16" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><rect x="5" y="11" width="14" height="9" rx="2"></rect><path d="M8 11V8a4 4 0 018 0v3"></path></svg>Your privacy</div>
+<div style="font-size:12px;line-height:1.45;color:#3B423F">Your answers stay private and in your control. I only use them to personalise your plans.</div>
+</div>
+<sc-if value="{{ mk.hello }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;width:24px;height:24px;border-radius:50%;background:#2B59FF;color:#FFFFFF;font:700 13px/24px Figtree,system-ui,sans-serif;text-align:center;box-shadow:0 0 0 4px rgba(43,89,255,.22);z-index:25;pointer-events:none;top:-10px;left:-8px">1</div></sc-if>
+</div>
+<div style="position:relative;background:#E3EDE7;border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:8px">
+<div style="font-family:'New Spirit',Georgia,serif;font-size:17px;font-weight:600">Choose my tone</div>
+<div style="font-size:13px;color:#59615D">Pick how I talk to you. You can change it anytime.</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:2px">
+<sc-for list="{{ tones }}" as="t" hint-placeholder-count="4"><div onClick="{{ t.go }}" style="height:34px;padding:0 14px;border-radius:10px;box-sizing:border-box;display:flex;align-items:center;font-size:13px;font-weight:700;cursor:pointer;background:{{ t.bg }};color:{{ t.c }};border:1.5px solid {{ t.b }}">{{ t.label }}</div></sc-for>
+</div>
+<sc-if value="{{ mk.hello }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;width:24px;height:24px;border-radius:50%;background:#2B59FF;color:#FFFFFF;font:700 13px/24px Figtree,system-ui,sans-serif;text-align:center;box-shadow:0 0 0 4px rgba(43,89,255,.22);z-index:25;pointer-events:none;top:-10px;right:-8px">2</div></sc-if>
+</div>
+<button onClick="{{ startAssess }}" style="height:52px;flex:none;margin-top:auto;border:0;border-radius:14px;background:#2D6151;color:#FFFFFF;font:600 17px 'New Spirit',Georgia,serif;cursor:pointer">Let’s get started</button>
+</div>
+</sc-if>
+
+<sc-if value="{{ s.assess }}" hint-placeholder-val="{{ false }}">
+<div style="height:100%;display:flex;flex-direction:column;padding-top:54px;position:relative;box-sizing:border-box">
+<div style="position:relative;display:flex;align-items:center;justify-content:space-between;padding:4px 10px">
+<button onClick="{{ backHello }}" style="width:40px;height:40px;border:0;background:none;color:#1D2321;display:flex;align-items:center;justify-content:center;cursor:pointer"><svg width="22" height="22" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M15 18l-6-6 6-6"></path></svg></button>
+<div style="font-size:16px;font-weight:700">Profile assessment</div>
+<button onClick="{{ openExit }}" style="width:40px;height:40px;border:0;background:none;color:#1D2321;display:flex;align-items:center;justify-content:center;cursor:pointer"><svg width="21" height="21" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M14 4h5v16h-5"></path><path d="M10 8l-4 4 4 4M6 12h9"></path></svg></button>
+<sc-if value="{{ mk.as }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;width:24px;height:24px;border-radius:50%;background:#2B59FF;color:#FFFFFF;font:700 13px/24px Figtree,system-ui,sans-serif;text-align:center;box-shadow:0 0 0 4px rgba(43,89,255,.22);z-index:25;pointer-events:none;top:-4px;right:2px">3</div></sc-if>
+</div>
+<div style="position:relative;display:flex;flex-direction:column;align-items:center;gap:8px;padding:2px 0 12px;border-bottom:1px solid #E2E4DE">
+<div style="width:180px;height:4px;border-radius:2px;background:#E2E4DE;overflow:hidden"><div style="height:100%;width:{{ prog }}%;background:#2D6151;transition:width .4s"></div></div>
+<div style="display:flex;gap:6px"><span style="height:22px;padding:0 9px;border-radius:11px;background:#FFFFFF;border:1px solid #E2E4DE;font-size:11px;font-weight:700;line-height:20px;color:#59615D">{{ qLabel }}</span><span style="height:22px;padding:0 9px;border-radius:11px;background:#E2EEE8;font-size:11px;font-weight:700;line-height:22px;color:#2D6151">Level 1</span></div>
+<sc-if value="{{ mk.as }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;width:24px;height:24px;border-radius:50%;background:#2B59FF;color:#FFFFFF;font:700 13px/24px Figtree,system-ui,sans-serif;text-align:center;box-shadow:0 0 0 4px rgba(43,89,255,.22);z-index:25;pointer-events:none;top:-8px;left:84px">1</div></sc-if>
+</div>
+<div ref="{{ chatRef }}" style="flex:1;min-height:0;overflow:auto;padding:14px 16px;display:flex;flex-direction:column;gap:12px">
+<sc-for list="{{ msgs }}" as="m" hint-placeholder-count="2">
+<sc-if value="{{ m.isStatus }}" hint-placeholder-val="{{ false }}"><div style="display:flex;align-items:center;gap:10px;background:#FFFFFF;border:1px solid #E2E4DE;border-radius:12px;padding:9px 12px"><div style="width:20px;height:20px;flex:none;border-radius:50%;background:#2D6151;color:#FFFFFF;display:flex;align-items:center;justify-content:center"><svg width="12" height="12" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round"><path d="M5 12l5 5L19 7"></path></svg></div><div style="font-size:13px;font-style:italic;color:#2D6151">{{ m.text }}</div></div></sc-if>
+<sc-if value="{{ m.isAi }}" hint-placeholder-val="{{ false }}"><div style="font-size:15px;line-height:1.45">{{ m.text }}</div></sc-if>
+<sc-if value="{{ m.isQ }}" hint-placeholder-val="{{ false }}"><div style="display:flex;flex-direction:column;gap:6px;font-size:15px;line-height:1.45"><div style="font-weight:700">Question {{ m.num }} of 3 · Level 1</div><div>{{ m.q }}</div><div style="display:flex;flex-direction:column;gap:4px;padding-left:6px"><div><span style="font-weight:700">Option A.</span> {{ m.a }}</div><div><span style="font-weight:700">Option B.</span> {{ m.b }}</div></div></div></sc-if>
+<sc-if value="{{ m.isMe }}" hint-placeholder-val="{{ false }}"><div style="align-self:flex-end;background:#D7E7DE;padding:9px 14px;border-radius:16px 16px 4px 16px;font-size:15px">{{ m.text }}</div></sc-if>
+</sc-for>
+</div>
+<div style="position:relative;padding:8px 16px 0;display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;min-height:44px;box-sizing:border-box">
+<sc-if value="{{ canAnswer }}" hint-placeholder-val="{{ true }}">
+<div onClick="{{ answerA }}" style="height:36px;padding:0 14px;border-radius:10px;border:1.5px solid #2D6151;color:#2D6151;background:#FFFFFF;font-size:14px;font-weight:700;display:flex;align-items:center;cursor:pointer">Option A</div>
+<div onClick="{{ answerB }}" style="height:36px;padding:0 14px;border-radius:10px;border:1.5px solid #2D6151;color:#2D6151;background:#FFFFFF;font-size:14px;font-weight:700;display:flex;align-items:center;cursor:pointer">Option B</div>
+<div onClick="{{ answerSkip }}" style="height:36px;padding:0 14px;border-radius:10px;border:1.5px solid #C9CEC9;color:#59615D;background:transparent;font-size:14px;font-weight:600;display:flex;align-items:center;cursor:pointer">Skip this</div>
+</sc-if>
+<sc-if value="{{ mk.as }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;width:24px;height:24px;border-radius:50%;background:#2B59FF;color:#FFFFFF;font:700 13px/24px Figtree,system-ui,sans-serif;text-align:center;box-shadow:0 0 0 4px rgba(43,89,255,.22);z-index:25;pointer-events:none;top:-4px;left:84px">2</div></sc-if>
+</div>
+<div style="display:flex;align-items:center;gap:10px;padding:10px 16px 40px">
+<div style="width:34px;height:34px;flex:none;border-radius:50%;background:#2D6151;position:relative"><div style="position:absolute;width:11px;height:11px;border-radius:50%;background:#F4F4EF;top:7px;right:7px"></div></div>
+<div style="flex:1;height:44px;box-sizing:border-box;display:flex;align-items:center;gap:8px;background:#FFFFFF;border:1px solid #E2E4DE;border-radius:22px;padding:0 8px 0 16px;color:#8B928E;font-size:15px"><span style="flex:1">Write your message</span><svg width="20" height="20" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M4 12l16-8-6 16-3-7z"></path></svg></div>
+</div>
+<sc-if value="{{ sheetExit }}" hint-placeholder-val="{{ false }}">
+<div onClick="{{ closeSheet }}" style="position:absolute;inset:0;background:rgba(29,35,33,.4);z-index:30"></div>
+<div style="position:absolute;left:0;right:0;bottom:0;z-index:31;background:#FBFBF8;border-radius:26px 26px 0 0;padding:28px 24px 44px;display:flex;flex-direction:column;gap:10px">
+<div style="font-family:'New Spirit',Georgia,serif;font-size:26px;font-weight:500">Exit assessment?</div>
+<div style="font-size:15px;line-height:1.45;color:#59615D">Leaving now is fine. You can pick this up whenever you’re ready to finish.</div>
+<div style="display:flex;gap:10px;margin-top:14px"><button onClick="{{ closeSheet }}" style="flex:1;height:50px;border:1.5px solid #2D6151;border-radius:14px;background:transparent;color:#2D6151;font:600 17px 'New Spirit',Georgia,serif;cursor:pointer">Cancel</button><button onClick="{{ exitAssess }}" style="flex:1;height:50px;border:0;border-radius:14px;background:#2D6151;color:#FFFFFF;font:600 17px 'New Spirit',Georgia,serif;cursor:pointer">Exit</button></div>
+</div>
+</sc-if>
+<sc-if value="{{ sheetLevel }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;inset:0;background:rgba(29,35,33,.4);z-index:30"></div>
+<div style="position:absolute;left:16px;right:16px;bottom:44px;z-index:31;background:#FBFBF8;border-radius:24px;padding:28px 22px 22px;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center">
+<div style="width:64px;height:64px;border-radius:50%;background:#2D6151;color:#FFFFFF;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 10px #E2EEE8"><svg width="30" height="30" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round"><path d="M5 12l5 5L19 7"></path></svg></div>
+<div style="font-family:'New Spirit',Georgia,serif;font-size:24px;line-height:1.2;font-weight:500;margin-top:8px"><span style="color:#2D6151">Level 1</span> complete. Ready for Level 2?</div>
+<div style="font-size:14px;color:#59615D">You can also continue later from your profile.</div>
+<button onClick="{{ finishLevel }}" style="width:100%;height:50px;margin-top:8px;border:0;border-radius:14px;background:#2D6151;color:#FFFFFF;font:600 17px 'New Spirit',Georgia,serif;cursor:pointer">Continue</button>
+</div>
+</sc-if>
+</div>
+</sc-if>
+
+<sc-if value="{{ s.events }}" hint-placeholder-val="{{ false }}">
+<div style="height:100%;display:flex;flex-direction:column;padding-top:54px;position:relative;box-sizing:border-box">
+<div style="display:flex;align-items:center;gap:14px;padding:6px 16px 4px">
+<div style="display:flex;color:#1D2321"><svg width="24" height="24" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></div>
+<div style="flex:1;font-family:'New Spirit',Georgia,serif;font-size:26px;font-weight:500">Events</div>
+<div style="display:flex;color:#1D2321"><svg width="22" height="22" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg></div>
+<div onClick="{{ openCreate }}" style="display:flex;color:#1D2321;cursor:pointer"><svg width="24" height="24" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v8M8 12h8"></path></svg></div>
+</div>
+<div style="display:flex;align-items:center;gap:8px;padding:8px 16px">
+<div onClick="{{ toggleExpand }}" style="display:flex;align-items:center;gap:4px;height:34px;box-sizing:border-box;padding:0 8px 0 12px;border:1.5px solid #1D2321;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer">November 2026<svg width="16" height="16" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M6 9l6 6 6-6"></path></svg></div>
+<div style="flex:1"></div>
+<div style="position:relative;display:flex;gap:2px;padding:3px;border-radius:10px;background:#E6E8E2">
+<div onClick="{{ setDay }}" style="display:flex;align-items:center;gap:5px;height:28px;padding:0 9px;border-radius:8px;background:{{ segDay.bg }};color:{{ segDay.c }};box-shadow:{{ segDay.sh }};font-size:13px;font-weight:700;cursor:pointer"><svg width="16" height="16" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><rect x="4" y="4" width="16" height="7" rx="2"></rect><rect x="4" y="13" width="16" height="7" rx="2"></rect></svg><sc-if value="{{ isDay }}" hint-placeholder-val="{{ true }}"><span>Day</span></sc-if></div>
+<div onClick="{{ setList }}" style="display:flex;align-items:center;gap:5px;height:28px;padding:0 9px;border-radius:8px;background:{{ segList.bg }};color:{{ segList.c }};box-shadow:{{ segList.sh }};font-size:13px;font-weight:700;cursor:pointer"><svg width="16" height="16" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"></path></svg><sc-if value="{{ isList }}" hint-placeholder-val="{{ false }}"><span>List</span></sc-if></div>
+<sc-if value="{{ mk.day }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;width:24px;height:24px;border-radius:50%;background:#2B59FF;color:#FFFFFF;font:700 13px/24px Figtree,system-ui,sans-serif;text-align:center;box-shadow:0 0 0 4px rgba(43,89,255,.22);z-index:25;pointer-events:none;top:-14px;left:-14px">1</div></sc-if>
+</div>
+<div style="width:34px;height:34px;display:flex;align-items:center;justify-content:center;color:#1D2321"><svg width="20" height="20" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M4 7h16M7 12h10M10 17h4"></path></svg></div>
+</div>
+<div style="position:relative;margin:0 12px;background:#FFFFFF;border:1px solid #E6E8E2;border-radius:16px;padding:10px 6px 0">
+<sc-if value="{{ notExpanded }}" hint-placeholder-val="{{ true }}">
+<div style="display:flex">
+<sc-for list="{{ week }}" as="c" hint-placeholder-count="7">
+<div onClick="{{ c.go }}" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer">
+<div style="font-size:11px;font-weight:600;color:#8B928E">{{ c.letter }}</div>
+<div style="width:34px;height:34px;box-sizing:border-box;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:{{ c.fw }};background:{{ c.bg }};color:{{ c.c }};border:{{ c.b }}">{{ c.num }}</div>
+<div style="width:4px;height:4px;border-radius:2px;background:{{ c.dotC }}"></div>
+</div>
+</sc-for>
+</div>
+</sc-if>
+<sc-if value="{{ expanded }}" hint-placeholder-val="{{ false }}">
+<div style="position:relative;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));row-gap:2px">
+<div style="text-align:center;font-size:11px;font-weight:600;color:#8B928E;padding-bottom:4px">S</div>
+<div style="text-align:center;font-size:11px;font-weight:600;color:#8B928E;padding-bottom:4px">M</div>
+<div style="text-align:center;font-size:11px;font-weight:600;color:#8B928E;padding-bottom:4px">T</div>
+<div style="text-align:center;font-size:11px;font-weight:600;color:#8B928E;padding-bottom:4px">W</div>
+<div style="text-align:center;font-size:11px;font-weight:600;color:#8B928E;padding-bottom:4px">T</div>
+<div style="text-align:center;font-size:11px;font-weight:600;color:#8B928E;padding-bottom:4px">F</div>
+<div style="text-align:center;font-size:11px;font-weight:600;color:#8B928E;padding-bottom:4px">S</div>
+<sc-for list="{{ monthCells }}" as="c" hint-placeholder-count="35">
+<div onClick="{{ c.go }}" style="display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer">
+<div style="width:34px;height:34px;box-sizing:border-box;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:{{ c.fw }};background:{{ c.bg }};color:{{ c.c }};border:{{ c.b }}">{{ c.num }}</div>
+<div style="width:4px;height:4px;border-radius:2px;background:{{ c.dotC }}"></div>
+</div>
+</sc-for>
+<sc-if value="{{ mk.month }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;width:24px;height:24px;border-radius:50%;background:#2B59FF;color:#FFFFFF;font:700 13px/24px Figtree,system-ui,sans-serif;text-align:center;box-shadow:0 0 0 4px rgba(43,89,255,.22);z-index:25;pointer-events:none;top:-14px;left:-2px">1</div></sc-if>
+</div>
+</sc-if>
+<div onClick="{{ toggleExpand }}" style="position:relative;display:flex;justify-content:center;align-items:center;height:22px;color:#8B928E;cursor:pointer">
+<sc-if value="{{ notExpanded }}" hint-placeholder-val="{{ true }}"><svg width="18" height="18" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M6 9l6 6 6-6"></path></svg></sc-if>
+<sc-if value="{{ expanded }}" hint-placeholder-val="{{ false }}"><svg width="18" height="18" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M6 15l6-6 6 6"></path></svg></sc-if>
+<sc-if value="{{ mk.day }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;width:24px;height:24px;border-radius:50%;background:#2B59FF;color:#FFFFFF;font:700 13px/24px Figtree,system-ui,sans-serif;text-align:center;box-shadow:0 0 0 4px rgba(43,89,255,.22);z-index:25;pointer-events:none;top:0;left:calc(50% + 16px)">2</div></sc-if>
+</div>
+</div>
+<div style="display:flex;align-items:center;gap:8px;padding:12px 16px 8px">
+<div style="font-family:'New Spirit',Georgia,serif;font-size:18px;font-weight:600;color:#2D6151;white-space:nowrap">{{ dayTitle }}</div>
+<sc-if value="{{ notToday }}" hint-placeholder-val="{{ false }}"><div style="position:relative"><div onClick="{{ goToday }}" style="height:28px;padding:0 12px;border-radius:14px;background:#2D6151;color:#FFFFFF;font-size:13px;font-weight:700;display:flex;align-items:center;cursor:pointer">Today</div><sc-if value="{{ mk.month }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;width:24px;height:24px;border-radius:50%;background:#2B59FF;color:#FFFFFF;font:700 13px/24px Figtree,system-ui,sans-serif;text-align:center;box-shadow:0 0 0 4px rgba(43,89,255,.22);z-index:25;pointer-events:none;top:-14px;right:-14px">2</div></sc-if></div></sc-if>
+<div style="flex:1"></div>
+<div style="position:relative;display:flex;gap:2px;padding:3px;border-radius:10px;background:#E6E8E2">
+<div onClick="{{ setDetail }}" style="display:flex;align-items:center;gap:5px;height:26px;padding:0 8px;border-radius:8px;background:{{ segDet.bg }};color:{{ segDet.c }};box-shadow:{{ segDet.sh }};font-size:12px;font-weight:700;cursor:pointer"><svg width="14" height="14" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><rect x="4" y="4" width="16" height="7" rx="2"></rect><rect x="4" y="13" width="16" height="7" rx="2"></rect></svg><sc-if value="{{ isDetail }}" hint-placeholder-val="{{ true }}"><span>Detail</span></sc-if></div>
+<div onClick="{{ setCompact }}" style="display:flex;align-items:center;gap:5px;height:26px;padding:0 8px;border-radius:8px;background:{{ segCmp.bg }};color:{{ segCmp.c }};box-shadow:{{ segCmp.sh }};font-size:12px;font-weight:700;cursor:pointer"><svg width="14" height="14" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M4 6h16M4 10h16M4 14h16M4 18h16"></path></svg><sc-if value="{{ isCompact }}" hint-placeholder-val="{{ false }}"><span>Compact</span></sc-if></div>
+<sc-if value="{{ mk.listAny }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;width:24px;height:24px;border-radius:50%;background:#2B59FF;color:#FFFFFF;font:700 13px/24px Figtree,system-ui,sans-serif;text-align:center;box-shadow:0 0 0 4px rgba(43,89,255,.22);z-index:25;pointer-events:none;top:-14px;left:-14px">4</div></sc-if>
+</div>
+</div>
+<sc-if value="{{ isDay }}" hint-placeholder-val="{{ true }}">
+<div style="display:flex;gap:8px;padding:0 16px 10px">
+<div style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:19px;background:#E2EEE8;color:#2D6151;font-size:12px;font-weight:600"><span style="font-size:15px;font-weight:800">{{ cnt.todo }}</span>To do</div>
+<div style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:19px;background:#FAEFD6;color:#7A5200;font-size:12px;font-weight:600"><span style="font-size:15px;font-weight:800">{{ cnt.now }}</span>In progress</div>
+<div style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:19px;background:#E9EAE6;color:#4D5450;font-size:12px;font-weight:600"><span style="font-size:15px;font-weight:800">{{ cnt.done }}</span>Completed</div>
+</div>
+<div ref="{{ dayRef }}" style="flex:1;min-height:0;overflow:auto;border-top:1px solid #E2E4DE">
+<div style="position:relative;height:{{ tlH }}px;margin:12px 0 110px">
+<div style="position:absolute;left:60px;top:0;bottom:0;width:1px;background:#E2E4DE"></div>
+<sc-for list="{{ hours }}" as="h" hint-placeholder-count="0">
+<div style="position:absolute;left:60px;right:0;top:{{ h.top }}px;border-top:1px solid #ECEEE9"></div>
+<div style="position:absolute;left:12px;top:{{ h.lt }}px;font-size:11px;font-weight:500;color:#8B928E">{{ h.label }}</div>
+</sc-for>
+<sc-if value="{{ noDayEv }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;left:76px;top:110px;font-size:14px;color:#8B928E">Nothing scheduled</div></sc-if>
+<sc-for list="{{ dayCards }}" as="ev" hint-placeholder-count="0">
+<div onClick="{{ ev.open }}" style="position:absolute;left:66px;right:14px;top:{{ ev.top }}px;height:{{ ev.h }}px;box-sizing:border-box;border-radius:8px;background:{{ ev.bg }};border:{{ ev.border }};display:flex;overflow:hidden;cursor:pointer;z-index:2">
+<div style="width:3px;flex:none;background:{{ ev.line }}"></div>
+<sc-if value="{{ ev.one }}" hint-placeholder-val="{{ false }}">
+<div style="flex:1;min-width:0;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:0 10px">
+<div style="font-size:13px;font-weight:600;color:{{ ev.titleC }};white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ ev.t }}</div>
+<div style="font-size:11px;color:#59615D;white-space:nowrap;flex:none">{{ ev.short }}</div>
+</div>
+</sc-if>
+<sc-if value="{{ ev.multi }}" hint-placeholder-val="{{ false }}">
+<div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:3px;padding:6px 10px">
+<div style="font-size:14px;font-weight:600;color:{{ ev.titleC }};white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ ev.t }}</div>
+<div style="font-size:12px;color:#59615D">{{ ev.time }}</div>
+<sc-if value="{{ ev.showObj }}" hint-placeholder-val="{{ false }}">
+<sc-if value="{{ ev.hasObj }}" hint-placeholder-val="{{ false }}"><div style="display:flex;align-items:center;gap:5px;font-size:12px;color:#59615D"><svg width="13" height="13" viewBox="0 0 24 24" style="flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><circle cx="12" cy="12" r="8"></circle><circle cx="12" cy="12" r="4"></circle></svg>{{ ev.obj }}</div></sc-if>
+<sc-if value="{{ ev.noObj }}" hint-placeholder-val="{{ false }}"><div style="display:flex;align-items:center;gap:4px;font-size:12px;font-weight:700;color:#2D6151"><svg width="13" height="13" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round"><path d="M12 5v14M5 12h14"></path></svg>Add objective</div></sc-if>
+</sc-if>
+<sc-if value="{{ ev.showChips }}" hint-placeholder-val="{{ false }}"><div style="display:flex;gap:6px;margin-top:2px"><sc-if value="{{ ev.hasTag }}" hint-placeholder-val="{{ false }}"><span style="display:flex;align-items:center;gap:4px;height:20px;padding:0 7px;border-radius:6px;font-size:11px;font-weight:600;background:#F1F3EF;color:#59615D">{{ ev.tag }}</span></sc-if></div></sc-if>
+</div>
+</sc-if>
+</div>
+<sc-if value="{{ ev.mk3 }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;width:24px;height:24px;border-radius:50%;background:#2B59FF;color:#FFFFFF;font:700 13px/24px Figtree,system-ui,sans-serif;text-align:center;box-shadow:0 0 0 4px rgba(43,89,255,.22);z-index:25;pointer-events:none;top:{{ ev.mTop }}px;left:52px">3</div></sc-if>
+<sc-if value="{{ ev.mk5 }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;width:24px;height:24px;border-radius:50%;background:#2B59FF;color:#FFFFFF;font:700 13px/24px Figtree,system-ui,sans-serif;text-align:center;box-shadow:0 0 0 4px rgba(43,89,255,.22);z-index:25;pointer-events:none;top:{{ ev.mTop }}px;right:4px">5</div></sc-if>
+</sc-for>
+<sc-if value="{{ showNow }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;left:0;right:0;top:{{ nowTop }}px;height:0;z-index:5;pointer-events:none">
+<div style="position:absolute;left:56px;right:0;top:-1px;height:2px;background:#2D6151"></div>
+<div style="position:absolute;left:10px;top:-10px;height:20px;padding:0 6px;border-radius:10px;background:#2D6151;color:#FFFFFF;font-size:11px;font-weight:700;line-height:20px">9:41</div>
+<sc-if value="{{ mk.day }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;width:24px;height:24px;border-radius:50%;background:#2B59FF;color:#FFFFFF;font:700 13px/24px Figtree,system-ui,sans-serif;text-align:center;box-shadow:0 0 0 4px rgba(43,89,255,.22);z-index:25;pointer-events:none;top:-12px;right:4px">4</div></sc-if>
+</div>
+</sc-if>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ isList }}" hint-placeholder-val="{{ false }}">
+<div style="flex:1;min-height:0;overflow:auto;padding:4px 16px 110px;display:flex;flex-direction:column;gap:18px">
+<sc-for list="{{ listDays }}" as="day" hint-placeholder-count="0">
+<div style="display:flex;flex-direction:column;gap:8px">
+<div style="position:relative;display:flex;align-items:baseline;gap:8px;padding-top:4px">
+<span style="font-family:'New Spirit',Georgia,serif;font-size:17px;font-weight:600">{{ day.label }}</span>
+<span style="font-size:13px;color:#8B928E">{{ day.sub }}</span>
+<sc-if value="{{ day.mk1 }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;width:24px;height:24px;border-radius:50%;background:#2B59FF;color:#FFFFFF;font:700 13px/24px Figtree,system-ui,sans-serif;text-align:center;box-shadow:0 0 0 4px rgba(43,89,255,.22);z-index:25;pointer-events:none;top:0;left:136px">1</div></sc-if>
+</div>
+<sc-if value="{{ day.empty }}" hint-placeholder-val="{{ false }}"><div style="font-size:14px;color:#8B928E;padding:10px 0 4px;border-top:1px dashed #D5D9D3">Nothing scheduled</div></sc-if>
+<sc-for list="{{ day.items }}" as="ev" hint-placeholder-count="0">
+<div onClick="{{ ev.open }}" style="position:relative;display:flex;gap:10px;cursor:pointer">
+<div style="width:58px;flex:none;display:flex;flex-direction:column;gap:2px;padding-top:9px;font-size:11px;color:#8B928E;text-align:right"><span style="font-weight:600;color:#59615D">{{ ev.start }}</span><span>{{ ev.end }}</span></div>
+<div style="flex:1;min-width:0;display:flex;border-radius:10px;overflow:hidden;background:{{ ev.bg }};border:{{ ev.border }}">
+<div style="width:3px;flex:none;background:{{ ev.line }}"></div>
+<sc-if value="{{ ev.full }}" hint-placeholder-val="{{ true }}">
+<div style="flex:1;min-width:0;padding:9px 12px;display:flex;flex-direction:column;gap:5px">
+<div style="font-size:15px;font-weight:600;color:{{ ev.titleC }}">{{ ev.t }}</div>
+<sc-if value="{{ ev.hasObj }}" hint-placeholder-val="{{ false }}"><div style="display:flex;align-items:center;gap:5px;font-size:12px;color:#59615D"><svg width="13" height="13" viewBox="0 0 24 24" style="flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><circle cx="12" cy="12" r="8"></circle><circle cx="12" cy="12" r="4"></circle></svg>{{ ev.obj }}</div></sc-if>
+<sc-if value="{{ ev.noObj }}" hint-placeholder-val="{{ false }}"><div style="display:flex;align-items:center;gap:4px;font-size:12px;font-weight:700;color:#2D6151"><svg width="13" height="13" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round"><path d="M12 5v14M5 12h14"></path></svg>Add objective</div></sc-if>
+<sc-if value="{{ ev.chips }}" hint-placeholder-val="{{ false }}"><div style="display:flex;gap:6px;flex-wrap:wrap">
+<sc-if value="{{ ev.hasOut }}" hint-placeholder-val="{{ false }}"><span style="display:flex;align-items:center;gap:4px;height:22px;box-sizing:border-box;padding:0 8px;border-radius:6px;font-size:11px;font-weight:700;background:{{ ev.outBg }};color:{{ ev.outC }};border:1px solid {{ ev.outB }}">{{ ev.out }}</span></sc-if>
+<sc-if value="{{ ev.hasTag }}" hint-placeholder-val="{{ false }}"><span style="display:flex;align-items:center;gap:4px;height:22px;padding:0 8px;border-radius:6px;font-size:11px;font-weight:600;background:#F1F3EF;color:#59615D">{{ ev.tag }}</span></sc-if>
+</div></sc-if>
+</div>
+</sc-if>
+<sc-if value="{{ ev.compact }}" hint-placeholder-val="{{ false }}"><div style="flex:1;min-width:0;padding:0 12px;height:38px;display:flex;align-items:center;justify-content:space-between;gap:8px"><span style="font-size:14px;font-weight:600;color:{{ ev.titleC }};white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ ev.t }}</span><sc-if value="{{ ev.hasOut }}" hint-placeholder-val="{{ false }}"><span style="font-size:11px;font-weight:700;color:{{ ev.outC }}">{{ ev.out }}</span></sc-if></div></sc-if>
+</div>
+<sc-if value="{{ ev.mk2 }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;width:24px;height:24px;border-radius:50%;background:#2B59FF;color:#FFFFFF;font:700 13px/24px Figtree,system-ui,sans-serif;text-align:center;box-shadow:0 0 0 4px rgba(43,89,255,.22);z-index:25;pointer-events:none;top:50px;left:160px">2</div><div style="position:absolute;width:24px;height:24px;border-radius:50%;background:#2B59FF;color:#FFFFFF;font:700 13px/24px Figtree,system-ui,sans-serif;text-align:center;box-shadow:0 0 0 4px rgba(43,89,255,.22);z-index:25;pointer-events:none;top:26px;right:8px">3</div></sc-if>
+</div>
+</sc-for>
+</div>
+</sc-for>
+</div>
+</sc-if>
+<div style="position:absolute;left:0;right:0;bottom:0;height:84px;box-sizing:border-box;padding:8px 10px 0;background:rgba(251,251,248,.97);border-top:1px solid #E2E4DE;display:flex;justify-content:space-around;align-items:flex-start;z-index:10">
+<div style="width:58px;display:flex;flex-direction:column;align-items:center;gap:3px;color:#8B928E;font-size:11px;font-weight:600"><svg width="22" height="22" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M4 11l8-7 8 7v9H4z"></path></svg>Home</div>
+<div style="width:58px;display:flex;flex-direction:column;align-items:center;gap:3px;color:#2D6151;font-size:11px;font-weight:700"><svg width="22" height="22" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><rect x="4" y="5" width="16" height="15" rx="2"></rect><path d="M4 10h16M9 3v4M15 3v4"></path></svg>Events</div>
+<div onClick="{{ openPrompt }}" style="width:60px;height:60px;flex:none;margin-top:-30px;box-sizing:border-box;border-radius:50%;background:#2D6151;border:4px solid #F4F4EF;box-shadow:0 6px 16px rgba(45,97,81,.35);display:flex;align-items:center;justify-content:center;cursor:pointer"><div style="width:24px;height:24px;border-radius:50%;background:#F4F4EF;position:relative"><div style="position:absolute;width:8px;height:8px;border-radius:50%;background:#2D6151;top:4px;right:4px"></div></div></div>
+<div style="width:58px;display:flex;flex-direction:column;align-items:center;gap:3px;color:#8B928E;font-size:11px;font-weight:600"><svg width="22" height="22" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><rect x="5" y="4" width="14" height="17" rx="2"></rect><path d="M9 11l2 2 4-4"></path></svg>Tasks</div>
+<div style="width:58px;display:flex;flex-direction:column;align-items:center;gap:3px;color:#8B928E;font-size:11px;font-weight:600"><svg width="22" height="22" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M6 21V4h11l-2 4 2 4H6"></path></svg>Goals</div>
+</div>
+<sc-if value="{{ prompt }}" hint-placeholder-val="{{ false }}">
+<div onClick="{{ closePrompt }}" style="position:absolute;inset:0;background:rgba(29,35,33,.24);z-index:30"></div>
+<div style="position:absolute;left:8px;right:8px;bottom:{{ sheetBottom }}px;max-height:calc(100% - 70px);z-index:31;background:#FBFBF8;border-radius:26px;box-shadow:0 -4px 30px rgba(29,35,33,.18);display:flex;flex-direction:column;overflow:hidden">
+<div style="position:relative;height:42px;flex:none;display:flex;align-items:center;justify-content:flex-end;gap:2px;padding:0 10px">
+<div style="position:absolute;left:50%;top:8px;width:40px;height:5px;margin-left:-20px;border-radius:3px;background:#C9CEC9"></div>
+<div style="width:34px;height:34px;display:flex;align-items:center;justify-content:center;color:#59615D"><svg width="19" height="19" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></div>
+<div onClick="{{ newSession }}" style="width:34px;height:34px;display:flex;align-items:center;justify-content:center;color:#59615D;cursor:pointer"><svg width="19" height="19" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M12 4H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2v-6"></path><path d="M17 3l4 4-8 8H9v-4z"></path></svg></div>
+<div onClick="{{ closePrompt }}" style="width:34px;height:34px;display:flex;align-items:center;justify-content:center;color:#59615D;cursor:pointer"><svg width="19" height="19" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M6 6l12 12M18 6L6 18"></path></svg></div>
+<sc-if value="{{ mk.pr }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;width:24px;height:24px;border-radius:50%;background:#2B59FF;color:#FFFFFF;font:700 13px/24px Figtree,system-ui,sans-serif;text-align:center;box-shadow:0 0 0 4px rgba(43,89,255,.22);z-index:25;pointer-events:none;top:9px;right:120px">1</div></sc-if>
+</div>
+<sc-if value="{{ pHas }}" hint-placeholder-val="{{ false }}">
+<div ref="{{ pRef }}" style="flex:1;min-height:0;overflow:auto;padding:2px 14px 10px;display:flex;flex-direction:column;gap:10px">
+<sc-for list="{{ pm }}" as="m" hint-placeholder-count="0">
+<sc-if value="{{ m.me }}" hint-placeholder-val="{{ false }}"><div style="align-self:flex-end;max-width:80%;background:#D7E7DE;padding:10px 14px;border-radius:16px 16px 4px 16px;font-size:15px">{{ m.text }}</div></sc-if>
+<sc-if value="{{ m.ai }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;gap:8px;align-items:flex-start">
+<div style="width:26px;height:26px;flex:none;border-radius:50%;background:#2D6151;position:relative"><div style="position:absolute;width:8px;height:8px;border-radius:50%;background:#F4F4EF;top:5px;right:5px"></div></div>
+<div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:8px;padding-top:3px">
+<div style="font-size:15px;line-height:1.4">{{ m.text }}</div>
+<sc-if value="{{ m.card }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;border-radius:10px;overflow:hidden;background:#FFFFFF;border:1px solid #E2E4DE"><div style="width:3px;background:#2D6151"></div><div style="padding:9px 12px;display:flex;flex-direction:column;gap:2px"><div style="font-size:14px;font-weight:600">Dinner with Maya</div><div style="font-size:12px;color:#59615D">Fri, 6 Nov · 7:00 – 8:00 PM</div></div></div>
+<div style="display:flex;gap:8px;flex-wrap:wrap"><div onClick="{{ viewInCal }}" style="height:32px;padding:0 12px;border-radius:16px;background:#2D6151;color:#FFFFFF;font-size:13px;font-weight:700;display:flex;align-items:center;cursor:pointer">View in calendar</div><div onClick="{{ addReminder }}" style="height:32px;box-sizing:border-box;padding:0 12px;border-radius:16px;border:1.5px solid #C9D6CF;color:#2D6151;font-size:13px;font-weight:700;display:flex;align-items:center;cursor:pointer">Add a reminder</div></div>
+</sc-if>
+</div>
+</div>
+</sc-if>
+</sc-for>
+<sc-if value="{{ pBusy }}" hint-placeholder-val="{{ false }}"><div style="padding-left:34px">{{ typing }}</div></sc-if>
+</div>
+</sc-if>
+<sc-if value="{{ pEmpty }}" hint-placeholder-val="{{ true }}">
+<div style="padding:0 14px 6px;display:flex;flex-direction:column;gap:6px">
+<div style="font-size:12px;font-weight:700;color:#8B928E">Try</div>
+<div onClick="{{ usePromptSugg }}" style="align-self:flex-start;border:1px solid #CFE0D7;background:#EEF5F1;color:#2D6151;border-radius:999px;padding:7px 12px;font-size:14px;cursor:pointer">Dinner with Maya on Friday at 7</div>
+</div>
+</sc-if>
+<div style="position:relative;padding:6px 10px 10px;flex:none">
+<div style="display:flex;align-items:flex-end;gap:8px;background:#FFFFFF;border:1px solid #E2E4DE;border-radius:24px;padding:6px 6px 6px 16px;box-shadow:0 2px 10px rgba(29,35,33,.06)">
+<textarea value="{{ pText }}" onChange="{{ onPText }}" onFocus="{{ onPFocus }}" onBlur="{{ onPBlur }}" placeholder="Ask Wren anything" style="flex:1;min-width:0;border:0;outline:none;resize:none;background:transparent;font:400 16px/22px Figtree,system-ui,sans-serif;color:#1D2321;height:{{ taH }}px;padding:7px 0;box-sizing:border-box;overflow:auto"></textarea>
+<button onMouseDown="{{ keepFocus }}" onClick="{{ sendPrompt }}" style="width:36px;height:36px;flex:none;border:0;border-radius:50%;background:{{ pSendBg }};color:{{ pSendC }};display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .15s"><svg width="18" height="18" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M4 12l16-8-6 16-3-7z"></path></svg></button>
+</div>
+<sc-if value="{{ mk.pr }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;width:24px;height:24px;border-radius:50%;background:#2B59FF;color:#FFFFFF;font:700 13px/24px Figtree,system-ui,sans-serif;text-align:center;box-shadow:0 0 0 4px rgba(43,89,255,.22);z-index:25;pointer-events:none;top:-6px;right:2px">2</div><div style="position:absolute;width:24px;height:24px;border-radius:50%;background:#2B59FF;color:#FFFFFF;font:700 13px/24px Figtree,system-ui,sans-serif;text-align:center;box-shadow:0 0 0 4px rgba(43,89,255,.22);z-index:25;pointer-events:none;top:-6px;left:2px">3</div></sc-if>
+</div>
+</div>
+</sc-if>
+</div>
+</sc-if>
+
+<sc-if value="{{ s.preview }}" hint-placeholder-val="{{ false }}">
+<div style="height:100%;display:flex;flex-direction:column;padding-top:54px;box-sizing:border-box">
+<div style="display:flex;align-items:center;gap:6px;padding:4px 12px">
+<button onClick="{{ backEvents }}" style="width:40px;height:40px;border:0;background:none;color:#1D2321;display:flex;align-items:center;justify-content:center;cursor:pointer"><svg width="22" height="22" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M15 18l-6-6 6-6"></path></svg></button>
+<div style="flex:1"></div>
+<div style="width:28px;height:28px;border-radius:50%;background:#2D6151;position:relative;margin-right:8px"><div style="position:absolute;width:9px;height:9px;border-radius:50%;background:#F4F4EF;top:5px;right:5px"></div></div>
+<div onClick="{{ delEvent }}" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;color:#1D2321;cursor:pointer"><svg width="20" height="20" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"></path></svg></div>
+<div onClick="{{ toDetails }}" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;color:#1D2321;cursor:pointer"><svg width="20" height="20" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M4 20h4L19 9l-4-4L4 16z"></path></svg></div>
+</div>
+<div style="flex:1;min-height:0;overflow:auto;padding:6px 20px 20px;display:flex;flex-direction:column;gap:16px">
+<div style="font-family:'New Spirit',Georgia,serif;font-size:26px;line-height:1.15;font-weight:500">{{ pv.t }}</div>
+<div style="display:flex;flex-direction:column;gap:11px;font-size:14px;color:#3B423F">
+<div style="display:flex;flex-wrap:wrap;gap:10px 18px">
+<div style="display:flex;align-items:center;gap:7px"><svg width="17" height="17" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><rect x="4" y="5" width="16" height="15" rx="2"></rect><path d="M4 10h16M9 3v4M15 3v4"></path></svg>{{ pv.date }}</div>
+<div style="display:flex;align-items:center;gap:7px"><svg width="17" height="17" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>{{ pv.time }}</div>
+</div>
+<div style="display:flex;align-items:center;gap:8px"><div style="width:3px;height:16px;border-radius:2px;background:{{ pv.stC }}"></div>{{ pv.status }}</div>
+<sc-if value="{{ pv.hasObj }}" hint-placeholder-val="{{ false }}"><div style="display:flex;align-items:center;gap:7px"><svg width="17" height="17" viewBox="0 0 24 24" style="flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><circle cx="12" cy="12" r="8"></circle><circle cx="12" cy="12" r="4"></circle></svg>Objective: {{ pv.obj }}</div></sc-if>
+<sc-if value="{{ pv.noObj }}" hint-placeholder-val="{{ false }}"><div style="display:flex;align-items:center;gap:6px;font-weight:700;color:#2D6151"><svg width="16" height="16" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round"><path d="M12 5v14M5 12h14"></path></svg>Add objective</div></sc-if>
+<sc-if value="{{ pv.hasRep }}" hint-placeholder-val="{{ false }}"><div style="display:flex;align-items:center;gap:7px;color:#2D6151;font-weight:600"><svg width="17" height="17" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M17 3l3 3-3 3"></path><path d="M4 11V9a3 3 0 013-3h13"></path><path d="M7 21l-3-3 3-3"></path><path d="M20 13v2a3 3 0 01-3 3H4"></path></svg>{{ pv.rep }}</div></sc-if>
+<sc-if value="{{ pv.hasTag }}" hint-placeholder-val="{{ false }}"><div style="align-self:flex-start;display:flex;align-items:center;gap:5px;height:26px;padding:0 10px;border-radius:7px;background:#2D6151;color:#FFFFFF;font-size:12px;font-weight:700">{{ pv.tag }}</div></sc-if>
+</div>
+<sc-if value="{{ pv.showOut }}" hint-placeholder-val="{{ false }}">
+<div style="position:relative;border-top:1px solid #E2E4DE;padding-top:16px;display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;align-items:center;justify-content:space-between"><div style="font-family:'New Spirit',Georgia,serif;font-size:17px;font-weight:600">Outcome</div><div style="color:#2D6151;display:flex"><svg width="18" height="18" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M4 20h4L19 9l-4-4L4 16z"></path></svg></div></div>
+<div style="align-self:flex-start;height:28px;box-sizing:border-box;padding:0 12px;border-radius:7px;display:flex;align-items:center;font-size:13px;font-weight:700;background:{{ pv.outBg }};color:{{ pv.outC }};border:1px solid {{ pv.outB }}">{{ pv.out }}</div>
+<sc-if value="{{ mk.pv }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;width:24px;height:24px;border-radius:50%;background:#2B59FF;color:#FFFFFF;font:700 13px/24px Figtree,system-ui,sans-serif;text-align:center;box-shadow:0 0 0 4px rgba(43,89,255,.22);z-index:25;pointer-events:none;top:52px;left:110px">1</div></sc-if>
+</div>
+</sc-if>
+<sc-if value="{{ pv.hasDesc }}" hint-placeholder-val="{{ false }}">
+<div style="border-top:1px solid #E2E4DE;padding-top:16px;display:flex;flex-direction:column;gap:6px"><div style="font-family:'New Spirit',Georgia,serif;font-size:17px;font-weight:600">Description</div><div style="font-size:14px;line-height:1.5;color:#3B423F">{{ pv.desc }}</div></div>
+</sc-if>
+<sc-if value="{{ pv.hasGoal }}" hint-placeholder-val="{{ false }}">
+<div style="border-top:1px solid #E2E4DE;padding-top:16px;display:flex;flex-direction:column;gap:10px"><div style="font-family:'New Spirit',Georgia,serif;font-size:17px;font-weight:600">Linked goal</div>
+<div style="background:#FFFFFF;border:1px solid #E2E4DE;border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:8px"><div style="font-size:14px;font-weight:600">{{ pv.goal }}</div><div style="height:4px;border-radius:2px;background:#E2E4DE;overflow:hidden"><div style="height:100%;width:{{ pv.gp }}%;background:#2D6151"></div></div><div style="font-size:12px;color:#8B928E">{{ pv.gpLabel }}</div></div>
+</div>
+</sc-if>
+</div>
+<div style="position:relative;display:flex;gap:10px;padding:12px 20px 38px;border-top:1px solid #E2E4DE;background:#FBFBF8">
+<button onClick="{{ delEvent }}" style="flex:1;height:50px;border:1.5px solid #2D6151;border-radius:14px;background:transparent;color:#2D6151;font:600 17px 'New Spirit',Georgia,serif;cursor:pointer">Delete</button>
+<button onClick="{{ toDetails }}" style="flex:1;height:50px;border:0;border-radius:14px;background:#2D6151;color:#FFFFFF;font:600 17px 'New Spirit',Georgia,serif;cursor:pointer">Modify</button>
+<sc-if value="{{ mk.pv }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;width:24px;height:24px;border-radius:50%;background:#2B59FF;color:#FFFFFF;font:700 13px/24px Figtree,system-ui,sans-serif;text-align:center;box-shadow:0 0 0 4px rgba(43,89,255,.22);z-index:25;pointer-events:none;top:-2px;left:8px">2</div></sc-if>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ s.details }}" hint-placeholder-val="{{ false }}">
+<div style="height:100%;display:flex;flex-direction:column;padding-top:54px;box-sizing:border-box">
+<div style="display:flex;align-items:center;gap:6px;padding:4px 12px">
+<button onClick="{{ backPreview }}" style="width:40px;height:40px;border:0;background:none;color:#1D2321;display:flex;align-items:center;justify-content:center;cursor:pointer"><svg width="22" height="22" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M15 18l-6-6 6-6"></path></svg></button>
+<div style="flex:1;font-family:'New Spirit',Georgia,serif;font-size:22px;font-weight:500">Event details</div>
+<div onClick="{{ delEvent }}" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;color:#1D2321;cursor:pointer"><svg width="20" height="20" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"></path></svg></div>
+</div>
+<div style="flex:1;min-height:0;overflow:auto;padding:6px 20px 20px;display:flex;flex-direction:column;gap:16px">
+<div style="display:flex;flex-direction:column;gap:2px"><div style="font-size:12px;font-weight:600;color:#59615D">Title <span style="color:#B5452F">*</span></div><div style="padding:8px 0;border-bottom:1.5px solid #D5D9D3;font-size:16px;font-weight:500">{{ dv.t }}</div></div>
+<div style="display:flex;flex-direction:column;gap:2px"><div style="font-size:12px;font-weight:600;color:#59615D">Calendar <span style="color:#B5452F">*</span></div><div style="display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1.5px solid #D5D9D3;font-size:15px;font-weight:500"><div style="width:22px;height:22px;border-radius:50%;background:#E2EEE8;color:#2D6151;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center">N</div><span style="flex:1">Nina’s calendar</span><svg width="16" height="16" viewBox="0 0 24 24" style="fill:none;stroke:#8B928E;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M6 9l6 6 6-6"></path></svg></div></div>
+<div style="display:flex;flex-direction:column;gap:2px"><div style="font-size:12px;font-weight:600;color:#59615D">Starts at <span style="color:#B5452F">*</span></div><div style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1.5px solid #D5D9D3;font-size:15px;font-weight:500">{{ dv.start }}<svg width="17" height="17" viewBox="0 0 24 24" style="fill:none;stroke:#59615D;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><rect x="4" y="5" width="16" height="15" rx="2"></rect><path d="M4 10h16M9 3v4M15 3v4"></path></svg></div></div>
+<div style="display:flex;flex-direction:column;gap:2px"><div style="font-size:12px;font-weight:600;color:#59615D">Ends at <span style="color:#B5452F">*</span></div><div style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1.5px solid #D5D9D3;font-size:15px;font-weight:500">{{ dv.end }}<svg width="17" height="17" viewBox="0 0 24 24" style="fill:none;stroke:#59615D;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><rect x="4" y="5" width="16" height="15" rx="2"></rect><path d="M4 10h16M9 3v4M15 3v4"></path></svg></div></div>
+<div style="display:flex;flex-direction:column;gap:2px"><div style="font-size:12px;font-weight:600;color:#59615D">Objective</div><div style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1.5px solid #D5D9D3;font-size:15px;font-weight:500;color:{{ dv.objC }}">{{ dv.obj }}<svg width="16" height="16" viewBox="0 0 24 24" style="fill:none;stroke:#8B928E;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M6 9l6 6 6-6"></path></svg></div></div>
+<div style="display:flex;flex-direction:column;gap:2px"><div style="font-size:12px;font-weight:600;color:#59615D">Recurrence</div><div style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1.5px solid #D5D9D3;font-size:15px;font-weight:500">{{ dv.rep }}<svg width="16" height="16" viewBox="0 0 24 24" style="fill:none;stroke:#8B928E;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M6 9l6 6 6-6"></path></svg></div></div>
+<div style="display:flex;flex-direction:column;gap:2px"><div style="font-size:12px;font-weight:600;color:#59615D">Description</div><div style="padding:8px 0;border-bottom:1.5px solid #D5D9D3;font-size:15px;line-height:1.45;color:{{ dv.descC }}">{{ dv.desc }}</div></div>
+<div style="display:flex;flex-direction:column;gap:8px"><div style="font-size:12px;font-weight:600;color:#59615D">Tags</div><div style="display:flex;gap:8px"><sc-for list="{{ dv.tags }}" as="t" hint-placeholder-count="3"><div style="height:30px;box-sizing:border-box;padding:0 12px;border-radius:8px;display:flex;align-items:center;font-size:13px;font-weight:700;background:{{ t.bg }};color:{{ t.c }};border:1.5px solid {{ t.b }}">{{ t.label }}</div></sc-for></div></div>
+</div>
+<div style="display:flex;gap:10px;padding:12px 20px 38px;border-top:1px solid #E2E4DE;background:#FBFBF8">
+<button onClick="{{ backPreview }}" style="flex:1;height:50px;border:1.5px solid #2D6151;border-radius:14px;background:transparent;color:#2D6151;font:600 17px 'New Spirit',Georgia,serif;cursor:pointer">Discard</button>
+<button onClick="{{ saveDetails }}" style="flex:1;height:50px;border:0;border-radius:14px;background:#2D6151;color:#FFFFFF;font:600 17px 'New Spirit',Georgia,serif;cursor:pointer">Save</button>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ s.create }}" hint-placeholder-val="{{ false }}">
+<div style="height:100%;display:flex;flex-direction:column;padding-top:54px;box-sizing:border-box">
+<div style="display:flex;align-items:center;gap:6px;padding:4px 12px">
+<button onClick="{{ cancelCreate }}" style="width:40px;height:40px;border:0;background:none;color:#1D2321;display:flex;align-items:center;justify-content:center;cursor:pointer"><svg width="22" height="22" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M15 18l-6-6 6-6"></path></svg></button>
+<div style="flex:1;font-family:'New Spirit',Georgia,serif;font-size:22px;font-weight:500">New event</div>
+<div style="width:28px;height:28px;border-radius:50%;background:#2D6151;position:relative;margin-right:8px"><div style="position:absolute;width:9px;height:9px;border-radius:50%;background:#F4F4EF;top:5px;right:5px"></div></div>
+</div>
+<div style="flex:1;min-height:0;overflow:auto;padding:6px 20px 20px;display:flex;flex-direction:column;gap:16px">
+<div style="position:relative;border:1.5px solid #A9C7B9;background:#EEF5F1;border-radius:16px;padding:12px;display:flex;flex-direction:column;gap:10px">
+<sc-if value="{{ cIdle }}" hint-placeholder-val="{{ true }}">
+<div style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:#2D6151"><div style="width:20px;height:20px;border-radius:50%;background:#2D6151;position:relative"><div style="position:absolute;width:7px;height:7px;border-radius:50%;background:#EEF5F1;top:4px;right:4px"></div></div>Tell Wren what to add</div>
+<div style="display:flex;align-items:center;gap:8px;background:#FFFFFF;border:1px solid #D5E4DC;border-radius:12px;padding:5px 5px 5px 12px">
+<input value="{{ cText }}" onChange="{{ onCText }}" onFocus="{{ onCFocus }}" onBlur="{{ onCBlur }}" placeholder="Type a sentence" style="flex:1;min-width:0;border:0;outline:none;background:transparent;font:400 15px Figtree,system-ui,sans-serif;color:#1D2321;padding:6px 0">
+<button onMouseDown="{{ keepFocus }}" onClick="{{ sendCreate }}" style="width:34px;height:34px;flex:none;border:0;border-radius:50%;background:{{ cSendBg }};color:{{ cSendC }};display:flex;align-items:center;justify-content:center;cursor:pointer"><svg width="17" height="17" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M4 12l16-8-6 16-3-7z"></path></svg></button>
+</div>
+<div onClick="{{ useCreateSugg }}" style="align-self:flex-start;border:1px solid #CFE0D7;background:#FFFFFF;color:#2D6151;border-radius:999px;padding:6px 12px;font-size:13px;cursor:pointer">Dinner with Maya on Friday at 7</div>
+</sc-if>
+<sc-if value="{{ cBusy }}" hint-placeholder-val="{{ false }}">
+<div style="align-self:flex-end;background:#D7E7DE;padding:8px 12px;border-radius:14px 14px 4px 14px;font-size:14px">{{ cSent }}</div>
+<div>{{ typing }}</div>
+</sc-if>
+<sc-if value="{{ cDone }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;gap:9px;align-items:flex-start;font-size:14px;line-height:1.45"><div style="width:20px;height:20px;flex:none;margin-top:1px;border-radius:50%;background:#2D6151;color:#FFFFFF;display:flex;align-items:center;justify-content:center"><svg width="12" height="12" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round"><path d="M5 12l5 5L19 7"></path></svg></div><div><span style="font-weight:700">Done.</span> I’ve filled in <span style="font-weight:700">Dinner with Maya</span> for Fri, 6 Nov, 7:00 – 8:00 PM. Want it to repeat every week?</div></div>
+<sc-if value="{{ showRepChips }}" hint-placeholder-val="{{ true }}"><div style="display:flex;gap:8px;padding-left:29px"><div onClick="{{ repWeekly }}" style="height:30px;box-sizing:border-box;padding:0 12px;border-radius:15px;border:1.5px solid #2D6151;color:#2D6151;background:#FFFFFF;font-size:13px;font-weight:700;display:flex;align-items:center;cursor:pointer">Repeat weekly</div><div onClick="{{ repNo }}" style="height:30px;box-sizing:border-box;padding:0 12px;border-radius:15px;border:1.5px solid #C9CEC9;color:#59615D;font-size:13px;font-weight:600;display:flex;align-items:center;cursor:pointer">No, thanks</div></div></sc-if>
+</sc-if>
+<sc-if value="{{ mk.cr }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;width:24px;height:24px;border-radius:50%;background:#2B59FF;color:#FFFFFF;font:700 13px/24px Figtree,system-ui,sans-serif;text-align:center;box-shadow:0 0 0 4px rgba(43,89,255,.22);z-index:25;pointer-events:none;top:-12px;right:-8px">1</div></sc-if>
+</div>
+<div style="position:relative;display:flex;flex-direction:column;gap:2px"><div style="font-size:12px;font-weight:600;color:#59615D">Title <span style="color:#B5452F">*</span></div><div style="padding:8px 0;border-bottom:1.5px solid #D5D9D3;font-size:16px;font-weight:500;color:{{ cv.tC }}">{{ cv.t }}</div><sc-if value="{{ mk.cr }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;width:24px;height:24px;border-radius:50%;background:#2B59FF;color:#FFFFFF;font:700 13px/24px Figtree,system-ui,sans-serif;text-align:center;box-shadow:0 0 0 4px rgba(43,89,255,.22);z-index:25;pointer-events:none;top:20px;right:0">2</div></sc-if></div>
+<div style="display:flex;flex-direction:column;gap:2px"><div style="font-size:12px;font-weight:600;color:#59615D">Starts at <span style="color:#B5452F">*</span></div><div style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1.5px solid #D5D9D3;font-size:15px;font-weight:500;color:{{ cv.dC }}">{{ cv.start }}<svg width="17" height="17" viewBox="0 0 24 24" style="fill:none;stroke:#59615D;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><rect x="4" y="5" width="16" height="15" rx="2"></rect><path d="M4 10h16M9 3v4M15 3v4"></path></svg></div></div>
+<div style="display:flex;flex-direction:column;gap:2px"><div style="font-size:12px;font-weight:600;color:#59615D">Ends at <span style="color:#B5452F">*</span></div><div style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1.5px solid #D5D9D3;font-size:15px;font-weight:500;color:{{ cv.dC }}">{{ cv.end }}<svg width="17" height="17" viewBox="0 0 24 24" style="fill:none;stroke:#59615D;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><rect x="4" y="5" width="16" height="15" rx="2"></rect><path d="M4 10h16M9 3v4M15 3v4"></path></svg></div></div>
+<div style="display:flex;flex-direction:column;gap:2px"><div style="font-size:12px;font-weight:600;color:#59615D">Objective</div><div style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1.5px solid #D5D9D3;font-size:15px;font-weight:500;color:#8B928E">Select<svg width="16" height="16" viewBox="0 0 24 24" style="fill:none;stroke:#8B928E;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M6 9l6 6 6-6"></path></svg></div></div>
+<div style="display:flex;flex-direction:column;gap:2px"><div style="font-size:12px;font-weight:600;color:#59615D">Recurrence</div><div style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1.5px solid #D5D9D3;font-size:15px;font-weight:500">{{ cv.rep }}<svg width="16" height="16" viewBox="0 0 24 24" style="fill:none;stroke:#8B928E;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M6 9l6 6 6-6"></path></svg></div></div>
+<div style="display:flex;flex-direction:column;gap:8px"><div style="font-size:12px;font-weight:600;color:#59615D">Tags</div><div style="display:flex;gap:8px"><sc-for list="{{ cTags }}" as="t" hint-placeholder-count="3"><div style="height:30px;box-sizing:border-box;padding:0 12px;border-radius:8px;display:flex;align-items:center;font-size:13px;font-weight:700;background:{{ t.bg }};color:{{ t.c }};border:1.5px solid {{ t.b }}">{{ t.label }}</div></sc-for></div></div>
+</div>
+<div style="display:flex;gap:10px;padding:12px 20px 38px;border-top:1px solid #E2E4DE;background:#FBFBF8">
+<button onClick="{{ cancelCreate }}" style="flex:1;height:50px;border:1.5px solid #2D6151;border-radius:14px;background:transparent;color:#2D6151;font:600 17px 'New Spirit',Georgia,serif;cursor:pointer">Cancel</button>
+<button onClick="{{ createEvent }}" style="flex:1;height:50px;border:0;border-radius:14px;background:{{ createBg }};color:#FFFFFF;font:600 17px 'New Spirit',Georgia,serif;cursor:pointer">Create</button>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ hasToast }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;left:50%;bottom:104px;transform:translateX(-50%);background:#1D2321;color:#FFFFFF;padding:10px 16px;border-radius:12px;font-size:14px;font-weight:600;white-space:nowrap;z-index:45;display:flex;align-items:center;gap:8px;box-shadow:0 8px 24px rgba(29,35,33,.25)"><svg width="16" height="16" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round"><path d="M5 12l5 5L19 7"></path></svg>{{ toast }}</div></sc-if>
+<sc-if value="{{ locked }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:0;z-index:60"></div></sc-if>
+</div>
+</x-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:402,&quot;height&quot;:874},&quot;screen&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;intro&quot;,&quot;signup&quot;,&quot;login&quot;,&quot;forgot&quot;,&quot;sent&quot;,&quot;created&quot;,&quot;hello&quot;,&quot;assess&quot;,&quot;events&quot;,&quot;preview&quot;,&quot;details&quot;,&quot;create&quot;],&quot;default&quot;:&quot;intro&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;preset&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;marks&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;},&quot;locked&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;},&quot;nonce&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;number&quot;}}">
+const QS = [
+  { q: 'When plans change at the last minute, I usually…', a: 'Adjust quickly and keep going.', b: 'Pause and re-plan before I act.' },
+  { q: 'I do my best work when…', a: 'My day is mapped out in advance.', b: 'I have room to decide as I go.' },
+  { q: 'When I have a big decision to make, I lean on…', a: 'How it feels to me.', b: 'What the facts say.' }
+];
+const SLIDES = [
+  { title: 'Say it once. Wren sorts it out.', body: 'Tell Wren what’s on your mind and it turns it into tasks, events and reminders.', cta: 'Next' },
+  { title: 'Your whole day in one view.', body: 'Events and tasks sit together, so you can see what’s next and how long it takes.', cta: 'Next' },
+  { title: 'Help that fits how you work.', body: 'Answer a few questions and Wren shapes its suggestions around you.', cta: 'Create an account' }
+];
+const EV = [
+  { id: 'e1', d: 3, s: 450, e: 480, t: 'Morning run', st: 'skipped', tag: 'Personal', out: 'Skipped' },
+  { id: 'e2', d: 3, s: 495, e: 510, t: 'Plan the day', st: 'done', out: 'Attended', rep: 'Repeats every weekday', desc: 'Ten minutes to look at the day and pick the top three things.' },
+  { id: 'e3', d: 3, s: 540, e: 560, t: 'Call with landlord', st: 'missed', out: 'Missed', obj: 'Agree on a repair date', tag: 'Personal' },
+  { id: 'e4', d: 3, s: 570, e: 615, t: 'Design review with Priya', st: 'now', obj: 'Agree on onboarding copy', tag: 'Work', goal: 'Ship the onboarding update', gp: 40, desc: 'Walk through the new intro screens and agree on the final copy.' },
+  { id: 'e5', d: 3, s: 630, e: 635, t: 'Call pharmacy', st: 'todo' },
+  { id: 'e6', d: 3, s: 645, e: 655, t: 'Reply to Sam', st: 'todo', tag: 'Work' },
+  { id: 'e7', d: 3, s: 750, e: 810, t: 'Lunch with Leo', st: 'todo', tag: 'Personal' },
+  { id: 'e8', d: 3, s: 900, e: 920, t: 'Dentist', st: 'todo', tag: 'Personal' },
+  { id: 'e9', d: 3, s: 960, e: 1020, t: 'Portfolio review', st: 'todo', tag: 'Work', obj: 'Pick three case studies', goal: 'Refresh my portfolio', gp: 25, desc: 'Choose which projects to show and in what order.' },
+  { id: 'e14', d: 2, s: 660, e: 690, t: 'Budget check-in', st: 'done', out: 'Attended', tag: 'Personal', obj: 'Review October spending' },
+  { id: 'e10', d: 4, s: 600, e: 660, t: 'Sprint planning', st: 'todo', tag: 'Work', obj: 'Agree on sprint scope' },
+  { id: 'e11', d: 4, s: 1110, e: 1170, t: 'Yoga', st: 'todo', tag: 'Personal', rep: 'Repeats every Wednesday' },
+  { id: 'e12', d: 5, s: 780, e: 810, t: '1:1 with Alex', st: 'todo', tag: 'Work' },
+  { id: 'e13', d: 6, s: 1020, e: 1035, t: 'Pick up dry cleaning', st: 'todo' },
+  { id: 'e15', d: 10, s: 600, e: 660, t: 'Workshop prep', st: 'todo', tag: 'Work' },
+  { id: 'e16', d: 18, s: 840, e: 900, t: 'Quarterly review', st: 'todo', tag: 'Work' }
+];
+const NEW_EV = { id: 'new', d: 6, s: 1140, e: 1200, t: 'Dinner with Maya', st: 'todo', tag: 'Personal' };
+const NOW = 581, TODAY = 3, H0 = 7, H1 = 20, HPX = 96;
+const WD = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const WD3 = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+const LET = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
+const wdOf = d => (d - 1) % 7;
+const hm = m => ((Math.floor(m / 60) + 11) % 12 + 1) + ':' + String(m % 60).padStart(2, '0');
+const ap = m => (m >= 720 ? 'PM' : 'AM');
+const range = (s, e) => ap(s) === ap(e) ? hm(s) + ' – ' + hm(e) + ' ' + ap(e) : hm(s) + ' ' + ap(s) + ' – ' + hm(e) + ' ' + ap(e);
+const ST = {
+  todo: { line: '#2D6151', bg: '#FFFFFF', title: '#1D2321', border: '1px solid #E2E4DE' },
+  now: { line: '#C98A12', bg: '#FFFBF0', title: '#1D2321', border: '1px solid #EED9A6' },
+  done: { line: '#8B928E', bg: '#E9EAE6', title: '#59615D', border: '1px solid #E9EAE6' },
+  missed: { line: '#B5452F', bg: '#FFFFFF', title: '#1D2321', border: '1px solid #EFD3CB' },
+  skipped: { line: 'transparent', bg: 'transparent', title: '#8B928E', border: '1.5px dashed #B3BAB6' }
+};
+const OUT = {
+  Attended: { bg: '#E2EEE8', c: '#2D6151', b: '#E2EEE8' },
+  Missed: { bg: '#F7E4DE', c: '#9C3A27', b: '#F7E4DE' },
+  Skipped: { bg: 'transparent', c: '#59615D', b: '#B3BAB6' }
+};
+const STL = { todo: 'To do', now: 'In progress', done: 'Completed', missed: 'Missed', skipped: 'Skipped' };
+const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+const SUGG = 'Dinner with Maya on Friday at 7';
+const TONES = ['Calm', 'Friendly', 'Practical', 'Gentle'];
+const SEG_ON = { bg: '#FFFFFF', c: '#2D6151', sh: '0 1px 3px rgba(29,35,33,.14)' };
+const SEG_OFF = { bg: 'transparent', c: '#59615D', sh: 'none' };
+
+class Component extends DCLogic {
+  state = this.initial(this.props || {});
+  chatRef = React.createRef();
+  dayRef = React.createRef();
+  pRef = React.createRef();
+  timers = [];
+
+  keyOf(p) { return (p.screen || '') + '|' + (p.preset || '') + '|' + (p.nonce || ''); }
+  firstMsgs() { return [{ k: 'status', text: 'Getting your first question ready' }, { k: 'q', n: 0 }]; }
+  msgsAfter(n) {
+    let m = this.firstMsgs();
+    for (let i = 0; i < n; i++) m = m.concat([{ k: 'me', text: 'Option A' }, { k: 'ai', text: 'Noted.' }, { k: 'status', text: 'Recording your answer' }, { k: 'q', n: i + 1 }]);
+    return m;
+  }
+  initial(p) {
+    this._key = this.keyOf(p);
+    const base = {
+      screen: p.screen || 'intro', slide: 0, email: '', pw: '', showPw: false, sTouched: false,
+      lEmail: '', lPw: '', lErr: '', lErrAt: '', fEmail: '', fErr: '', tone: 'Calm',
+      answered: 0, msgs: this.firstMsgs(), sheet: '', aBusy: false,
+      view: 'day', dense: false, expanded: false, sel: TODAY, openId: 'e4',
+      prompt: false, pText: '', pMsgs: [], pBusy: false, kb: false,
+      cText: '', cSent: '', cBusy: false, cDone: false, cRep: '', added: false, toast: '', scrollMin: null
+    };
+    const P = {
+      'intro-2': { screen: 'intro', slide: 1 },
+      'intro-3': { screen: 'intro', slide: 2 },
+      'signup-error': { screen: 'signup', email: 'nina.patel@example', pw: 'plan2026', sTouched: true },
+      'login-error': { screen: 'login', lEmail: 'nina.patel@example.com', lPw: 'plan2026', lErr: 'That email and password don’t match. Try again or reset your password.', lErrAt: 'pw' },
+      'forgot': { screen: 'forgot', fEmail: 'nina.patel@example.com' },
+      'sent': { screen: 'sent', fEmail: 'nina.patel@example.com' },
+      'assessment-mid': { screen: 'assess', answered: 1, msgs: this.msgsAfter(1) },
+      'assessment-exit': { screen: 'assess', answered: 1, msgs: this.msgsAfter(1), sheet: 'exit' },
+      'events-list': { screen: 'events', view: 'list' },
+      'events-compact': { screen: 'events', view: 'list', dense: true },
+      'events-month': { screen: 'events', expanded: true, sel: 5 },
+      'preview-past': { screen: 'preview', openId: 'e2' },
+      'preview': { screen: 'preview', openId: 'e4' },
+      'details': { screen: 'details', openId: 'e4' },
+      'prompt-typing': { screen: 'events', prompt: true, pText: SUGG, kb: true },
+      'prompt-reply': { screen: 'events', prompt: true, added: true, pMsgs: [{ k: 'me', text: SUGG }, { k: 'ai', text: 'Done. Dinner with Maya is on your calendar.', card: true }] },
+      'create-done': { screen: 'create', cDone: true }
+    };
+    return Object.assign(base, P[p.preset] || {});
+  }
+  componentDidMount() {
+    if (this._key !== this.keyOf(this.props)) { this.setState(this.initial(this.props)); return; }
+    this.syncScroll(); this.toBottom();
+  }
+  componentWillUnmount() { this.clear(); }
+  componentDidUpdate(pp, ps) {
+    if (this.keyOf(pp) !== this.keyOf(this.props)) { this.clear(); this.setState(this.initial(this.props)); return; }
+    const S = this.state;
+    if (ps.msgs !== S.msgs || ps.pMsgs !== S.pMsgs || ps.pBusy !== S.pBusy || ps.screen !== S.screen || ps.prompt !== S.prompt) this.toBottom();
+    if (ps.scrollMin !== S.scrollMin || ps.sel !== S.sel || ps.screen !== S.screen || ps.view !== S.view || ps.expanded !== S.expanded) this.syncScroll();
+  }
+  clear() { this.timers.forEach(clearTimeout); this.timers = []; }
+  later(fn, ms) { this.timers.push(setTimeout(fn, ms)); }
+  toBottom() { [this.chatRef.current, this.pRef.current].forEach(el => { if (el) el.scrollTop = el.scrollHeight; }); }
+  syncScroll() {
+    const el = this.dayRef.current; if (!el) return;
+    const m = this.state.scrollMin;
+    el.scrollTop = m == null ? 0 : Math.max(0, (m - H0 * 60) * HPX / 60 - 60);
+  }
+  go(screen, extra) { this.setState(Object.assign({ screen, kb: false }, extra || {})); }
+  flash(t) { this.setState({ toast: t }); this.later(() => this.setState({ toast: '' }), 2200); }
+  answer(label) {
+    const S = this.state; if (S.aBusy || S.answered >= 3) return;
+    const n = S.answered + 1, last = n === 3;
+    this.setState(s => ({ msgs: s.msgs.concat([{ k: 'me', text: label }]), aBusy: true }));
+    this.later(() => this.setState(s => ({
+      answered: n,
+      msgs: s.msgs.concat(last ? [{ k: 'ai', text: 'Thanks. That’s Level 1 done.' }] : [{ k: 'ai', text: label === 'Skip this' ? 'No problem. We can come back to it.' : 'Noted.' }, { k: 'status', text: 'Recording your answer' }])
+    })), 600);
+    this.later(() => this.setState(s => last ? { aBusy: false, sheet: 'level' } : { aBusy: false, msgs: s.msgs.concat([{ k: 'q', n }]) }), 1300);
+  }
+  sendPrompt() {
+    const t = this.state.pText.trim(); if (!t || this.state.pBusy) return;
+    this.setState(s => ({ pMsgs: s.pMsgs.concat([{ k: 'me', text: t }]), pText: '', pBusy: true }));
+    this.later(() => this.setState(s => ({ pMsgs: s.pMsgs.concat([{ k: 'ai', text: 'Done. Dinner with Maya is on your calendar.', card: true }]), pBusy: false, added: true })), 1100);
+  }
+  sendCreate() {
+    const t = this.state.cText.trim(); if (!t || this.state.cBusy) return;
+    this.setState({ cBusy: true, cSent: t, cText: '', kb: false });
+    this.later(() => this.setState({ cBusy: false, cDone: true }), 1100);
+  }
+
+  renderVals() {
+    const S = this.state, M = !!this.props.marks, scr = S.screen;
+    const s = { intro: scr === 'intro', signup: scr === 'signup', login: scr === 'login', forgot: scr === 'forgot', sent: scr === 'sent', created: scr === 'created', hello: scr === 'hello', assess: scr === 'assess', events: scr === 'events', preview: scr === 'preview', details: scr === 'details', create: scr === 'create' };
+    const all = S.added ? EV.concat([NEW_EV]) : EV;
+    const hasEv = d => all.some(e => e.d === d);
+    const outOf = e => { const o = OUT[e.out] || {}; return { hasOut: !!e.out, out: e.out, outBg: o.bg, outC: o.c, outB: o.b }; };
+    const isDay = S.view === 'day', isList = S.view === 'list';
+    const mkDay = M && s.events && isDay && !S.expanded && !S.prompt;
+    const mkList = M && s.events && isList && !S.dense;
+    const mk = { intro: M && s.intro, su: M && s.signup, li: M && s.login, fp: M && s.forgot, hello: M && s.hello, as: M && s.assess && !S.sheet, day: mkDay, month: M && s.events && S.expanded, listAny: M && s.events && isList, pv: M && s.preview, pr: M && s.events && S.prompt, cr: M && s.create };
+
+    const emailOk = EMAIL.test(S.email.trim());
+    const suErr = S.sTouched && !emailOk;
+    const rules = [['At least 8 characters', S.pw.length >= 8], ['One uppercase letter', /[A-Z]/.test(S.pw)], ['One number', /\d/.test(S.pw)]].map(([label, ok]) => ({ label, ok, no: !ok, c: ok ? '#2D6151' : '#59615D' }));
+    const score = rules.filter(r => r.ok).length;
+    const segC = score <= 1 ? '#B5452F' : score === 2 ? '#C98A12' : '#2D6151';
+    const canSign = emailOk && score === 3;
+    const su = {
+      emailErr: suErr, emailErrText: S.email.trim() ? 'Enter a full email address, like name@example.com.' : 'Enter your email address.',
+      emailLine: suErr ? '#B5452F' : '#C9CEC9', rules,
+      strength: !S.pw ? 'Not set' : score <= 1 ? 'Weak' : score === 2 ? 'Medium' : 'Strong', strengthC: S.pw ? segC : '#8B928E',
+      seg: [0, 1, 2].map(i => ({ c: S.pw && i < Math.max(1, score) ? segC : '#DADDD7' })), btnBg: canSign ? '#2D6151' : '#A9C2B8'
+    };
+    const li = { emailErr: S.lErrAt === 'email', pwErr: S.lErrAt === 'pw', err: S.lErr, emailLine: S.lErrAt === 'email' ? '#B5452F' : '#C9CEC9', pwLine: S.lErrAt === 'pw' ? '#B5452F' : '#C9CEC9' };
+    const fp = { err: !!S.fErr, errText: S.fErr, line: S.fErr ? '#B5452F' : '#C9CEC9' };
+
+    const msgs = S.msgs.map((m, i) => { const q = m.k === 'q' ? QS[m.n] : null; return { key: i, text: m.text, isStatus: m.k === 'status', isAi: m.k === 'ai', isMe: m.k === 'me', isQ: !!q, num: q ? m.n + 1 : 0, q: q ? q.q : '', a: q ? q.a : '', b: q ? q.b : '' }; });
+
+    const dayEv = all.filter(e => e.d === S.sel).sort((a, b) => a.s - b.s);
+    const dayCards = dayEv.map(e => {
+      const st = ST[e.st], dur = e.e - e.s, top = (e.s - H0 * 60) * HPX / 60 + 1, one = S.dense || dur < 20;
+      return Object.assign({
+        key: e.id, t: e.t, top, mTop: top - 6, h: Math.max(24, dur * HPX / 60 - 3), bg: st.bg, border: st.border, line: st.line, titleC: st.title,
+        time: range(e.s, e.e), short: hm(e.s) + '–' + hm(e.e), one, multi: !one, showObj: !one && dur >= 45, hasObj: !!e.obj, noObj: !e.obj, obj: e.obj,
+        showChips: !one && dur >= 60, hasTag: !!e.tag, tag: e.tag,
+        open: () => this.go('preview', { openId: e.id }), mk3: mkDay && e.id === 'e4', mk5: mkDay && e.id === 'e5'
+      }, outOf(e));
+    });
+    const hours = []; for (let h = H0; h <= H1; h++) hours.push({ key: h, top: (h - H0) * HPX, lt: (h - H0) * HPX - 7, label: h < 12 ? h + ' AM' : h === 12 ? '12 PM' : (h - 12) + ' PM' });
+    const cell = d => {
+      const out = d > 30, sel = !out && d === S.sel, today = !out && d === TODAY;
+      return { key: d, letter: LET[(d - 1) % 7], num: out ? d - 30 : d, bg: sel ? '#2D6151' : 'transparent', c: sel ? '#FFFFFF' : out ? '#B3BAB6' : today ? '#2D6151' : '#1D2321', b: today && !sel ? '1.5px solid #2D6151' : '1.5px solid transparent', fw: sel || today ? 700 : 500, dotC: !out && hasEv(d) ? (sel ? '#2D6151' : '#9AA39E') : 'transparent', go: () => { if (!out) this.setState({ sel: d, scrollMin: null }); } };
+    };
+    const ws = S.sel - wdOf(S.sel);
+    const monthCells = []; for (let d = 1; d <= 35; d++) monthCells.push(cell(d));
+    const cnt = st => String(dayEv.filter(e => e.st === st).length).padStart(2, '0');
+    const listDays = [];
+    for (let d = S.sel; d <= Math.min(30, S.sel + 4); d++) {
+      const items = all.filter(e => e.d === d).sort((a, b) => a.s - b.s).map(e => {
+        const st = ST[e.st];
+        return Object.assign({ key: e.id, t: e.t, start: hm(e.s) + ' ' + ap(e.s), end: hm(e.e) + ' ' + ap(e.e), bg: st.bg, border: st.border, line: st.line, titleC: st.title, hasObj: !!e.obj, noObj: !e.obj, obj: e.obj, hasTag: !!e.tag, tag: e.tag, chips: !!(e.out || e.tag), full: !S.dense, compact: S.dense, open: () => this.go('preview', { openId: e.id }), mk2: mkList && e.id === 'e2' }, outOf(e));
+      });
+      listDays.push({ key: d, label: d === TODAY ? 'Today' : d === TODAY + 1 ? 'Tomorrow' : WD[wdOf(d)], sub: WD3[wdOf(d)] + ', ' + d + ' Nov', items, empty: !items.length, mk1: M && s.events && isList && d === S.sel });
+    }
+
+    const ev = all.find(e => e.id === S.openId) || EV[3];
+    const evPast = ev.d < TODAY || (ev.d === TODAY && ev.e <= NOW);
+    const pv = Object.assign({ t: ev.t, date: WD3[wdOf(ev.d)] + ', ' + ev.d + ' Nov 2026', time: range(ev.s, ev.e), status: STL[ev.st], stC: ev.st === 'skipped' ? '#B3BAB6' : ST[ev.st].line, hasObj: !!ev.obj, noObj: !ev.obj, obj: ev.obj, hasTag: !!ev.tag, tag: ev.tag, hasRep: !!ev.rep, rep: ev.rep, showOut: evPast && !!ev.out, hasDesc: !!ev.desc, desc: ev.desc, hasGoal: !!ev.goal, goal: ev.goal, gp: ev.gp || 0, gpLabel: (ev.gp || 0) + '% complete' }, outOf(ev));
+    const tagChips = on => ['Personal', 'Work', 'Family'].map(t => ({ key: t, label: t, bg: on === t ? '#2D6151' : '#FFFFFF', c: on === t ? '#FFFFFF' : '#59615D', b: on === t ? '#2D6151' : '#D5D9D3' }));
+    const dStart = WD3[wdOf(ev.d)] + ', ' + ev.d + ' Nov 2026 · ';
+    const dv = { t: ev.t, start: dStart + hm(ev.s) + ' ' + ap(ev.s), end: dStart + hm(ev.e) + ' ' + ap(ev.e), obj: ev.obj || 'Select', objC: ev.obj ? '#1D2321' : '#8B928E', rep: ev.rep || 'Does not repeat', desc: ev.desc || 'Add a description', descC: ev.desc ? '#1D2321' : '#8B928E', tags: tagChips(ev.tag) };
+
+    const pOn = S.pText.trim().length > 0, cOn = S.cText.trim().length > 0;
+    const typing = React.createElement('div', { style: { display: 'flex', gap: 4, alignItems: 'center', padding: '11px 12px', background: '#FFFFFF', border: '1px solid #E2E4DE', borderRadius: '4px 14px 14px 14px', width: 'fit-content' } },
+      [0, 1, 2].map(i => React.createElement('span', { key: i, style: { width: 6, height: 6, borderRadius: 3, background: '#59615D', animation: 'wrenDot 1s ease-in-out ' + (i * 0.15) + 's infinite' } })));
+    const cv = S.cDone
+      ? { t: 'Dinner with Maya', tC: '#1D2321', start: 'Fri, 6 Nov 2026 · 7:00 PM', end: 'Fri, 6 Nov 2026 · 8:00 PM', dC: '#1D2321', rep: S.cRep === 'weekly' ? 'Every week on Friday' : 'Does not repeat' }
+      : { t: 'Add a title', tC: '#8B928E', start: 'Select date and time', end: 'Select date and time', dC: '#8B928E', rep: 'Does not repeat' };
+
+    return {
+      s, mk, kb: S.kb, locked: !!this.props.locked,
+      slide: SLIDES[S.slide], v0: S.slide === 0, v1: S.slide === 1, v2: S.slide === 2, notFirst: S.slide > 0,
+      dots: SLIDES.map((x, i) => ({ key: i, w: i === S.slide ? 22 : 6, c: i === S.slide ? '#2D6151' : '#C5D3CB', go: () => this.setState({ slide: i }) })),
+      introNext: () => S.slide < 2 ? this.setState({ slide: S.slide + 1 }) : this.go('signup'),
+      introBack: () => this.setState({ slide: Math.max(0, S.slide - 1) }),
+      toLogin: () => this.go('login', { lErr: '', lErrAt: '' }),
+      toSignup: () => this.go('signup'),
+      toForgot: () => this.go('forgot', { fEmail: S.lEmail, fErr: '' }),
+      email: S.email, pw: S.pw, pwType: S.showPw ? 'text' : 'password', su,
+      onEmail: e => this.setState({ email: e.target.value }),
+      onPw: e => this.setState({ pw: e.target.value }),
+      touchSignup: () => { if (S.email) this.setState({ sTouched: true }); },
+      togglePw: () => this.setState({ showPw: !S.showPw }),
+      submitSignup: () => canSign ? this.go('created') : this.setState({ sTouched: true }),
+      lEmail: S.lEmail, lPw: S.lPw, li,
+      onLEmail: e => this.setState({ lEmail: e.target.value, lErr: '', lErrAt: '' }),
+      onLPw: e => this.setState({ lPw: e.target.value, lErr: '', lErrAt: '' }),
+      submitLogin: () => {
+        if (!EMAIL.test(S.lEmail.trim())) this.setState({ lErr: 'Enter a full email address, like name@example.com.', lErrAt: 'email' });
+        else if (!S.lPw) this.setState({ lErr: 'Enter your password.', lErrAt: 'pw' });
+        else this.go('events', { sel: TODAY, view: 'day', prompt: false });
+      },
+      fEmail: S.fEmail, fp,
+      onFEmail: e => this.setState({ fEmail: e.target.value, fErr: '' }),
+      sendCode: () => EMAIL.test(S.fEmail.trim()) ? this.go('sent') : this.setState({ fErr: 'Enter the email address you signed up with.' }),
+      sentTo: S.fEmail.trim() || 'your email', resend: () => this.flash('Code sent again'),
+      toHello: () => this.go('hello'),
+      tones: TONES.map(t => ({ key: t, label: t === 'Calm' ? 'Calm (default)' : t, bg: S.tone === t ? '#2D6151' : '#FFFFFF', c: S.tone === t ? '#FFFFFF' : '#1D2321', b: S.tone === t ? '#2D6151' : '#C9D6CF', go: () => this.setState({ tone: t }) })),
+      startAssess: () => this.go('assess', { answered: 0, msgs: this.firstMsgs(), sheet: '', aBusy: false }),
+      msgs, prog: Math.round(S.answered / 3 * 100), qLabel: 'Question ' + Math.min(3, S.answered + 1) + ' of 3', canAnswer: !S.aBusy && S.answered < 3 && !S.sheet,
+      answerA: () => this.answer('Option A'), answerB: () => this.answer('Option B'), answerSkip: () => this.answer('Skip this'),
+      chatRef: this.chatRef, sheetExit: S.sheet === 'exit', sheetLevel: S.sheet === 'level',
+      openExit: () => this.setState({ sheet: 'exit' }), closeSheet: () => this.setState({ sheet: '' }),
+      exitAssess: () => this.go('events', { sheet: '' }), finishLevel: () => this.go('events', { sheet: '' }), backHello: () => this.go('hello'),
+      isDay, isList, isDetail: !S.dense, isCompact: S.dense, expanded: S.expanded, notExpanded: !S.expanded,
+      segDay: isDay ? SEG_ON : SEG_OFF, segList: isList ? SEG_ON : SEG_OFF, segDet: !S.dense ? SEG_ON : SEG_OFF, segCmp: S.dense ? SEG_ON : SEG_OFF,
+      setDay: () => this.setState({ view: 'day' }), setList: () => this.setState({ view: 'list' }),
+      setDetail: () => this.setState({ dense: false }), setCompact: () => this.setState({ dense: true }),
+      toggleExpand: () => this.setState({ expanded: !S.expanded }),
+      week: [0, 1, 2, 3, 4, 5, 6].map(i => cell(ws + i)), monthCells,
+      dayTitle: WD[wdOf(S.sel)] + ' · ' + S.sel + ' Nov', notToday: S.sel !== TODAY, goToday: () => this.setState({ sel: TODAY, scrollMin: null }),
+      cnt: { todo: cnt('todo'), now: cnt('now'), done: cnt('done') },
+      hours, tlH: (H1 - H0) * HPX + 16, dayCards, noDayEv: !dayEv.length, showNow: S.sel === TODAY, nowTop: (NOW - H0 * 60) * HPX / 60, dayRef: this.dayRef,
+      listDays,
+      openCreate: () => this.go('create', { cText: '', cSent: '', cDone: false, cBusy: false, cRep: '' }),
+      openPrompt: () => this.setState({ prompt: true }), closePrompt: () => this.setState({ prompt: false, kb: false }),
+      prompt: S.prompt, pText: S.pText, pm: S.pMsgs.map((m, i) => ({ key: i, text: m.text, me: m.k === 'me', ai: m.k === 'ai', card: !!m.card })),
+      pHas: S.pMsgs.length > 0 || S.pBusy, pEmpty: !S.pMsgs.length && !S.pBusy, pBusy: S.pBusy, pRef: this.pRef, typing,
+      taH: 22 * Math.min(4, Math.max(1, Math.ceil(S.pText.length / 26))) + 14,
+      pSendBg: pOn ? '#2D6151' : '#E6E8E2', pSendC: pOn ? '#FFFFFF' : '#9AA39E', sheetBottom: S.kb ? 8 : 34,
+      onPText: e => this.setState({ pText: e.target.value }), onPFocus: () => this.setState({ kb: true }), onPBlur: () => this.setState({ kb: false }),
+      keepFocus: e => e.preventDefault(), usePromptSugg: () => this.setState({ pText: SUGG }), sendPrompt: () => this.sendPrompt(),
+      newSession: () => this.setState({ pMsgs: [], pBusy: false, pText: '' }),
+      viewInCal: () => this.setState({ prompt: false, kb: false, sel: 6, view: 'day', expanded: false, scrollMin: 1140 }),
+      addReminder: () => this.flash('Reminders aren’t part of this demo'),
+      pv, dv, backEvents: () => this.go('events'), toDetails: () => this.go('details'), backPreview: () => this.go('preview'),
+      saveDetails: () => { this.go('preview'); this.flash('Changes saved'); }, delEvent: () => this.flash('Delete isn’t part of this demo'),
+      cText: S.cText, cSent: S.cSent, cIdle: !S.cBusy && !S.cDone, cBusy: S.cBusy, cDone: S.cDone, cv, cTags: tagChips(S.cDone ? 'Personal' : ''),
+      cSendBg: cOn ? '#2D6151' : '#E6E8E2', cSendC: cOn ? '#FFFFFF' : '#9AA39E', createBg: S.cDone ? '#2D6151' : '#A9C2B8',
+      onCText: e => this.setState({ cText: e.target.value }), onCFocus: () => this.setState({ kb: true }), onCBlur: () => this.setState({ kb: false }),
+      useCreateSugg: () => this.setState({ cText: SUGG }), sendCreate: () => this.sendCreate(),
+      showRepChips: S.cDone && !S.cRep, repWeekly: () => this.setState({ cRep: 'weekly' }), repNo: () => this.setState({ cRep: 'no' }),
+      createEvent: () => { if (!S.cDone) { this.flash('Add a title first'); return; } this.go('events', { added: true, sel: 6, view: 'day', expanded: false, scrollMin: 1140, prompt: false }); this.flash('Event added'); },
+      cancelCreate: () => this.go('events'),
+      hasToast: !!S.toast, toast: S.toast
+    };
+  }
+}
+</script>
+</body>
+</html>
