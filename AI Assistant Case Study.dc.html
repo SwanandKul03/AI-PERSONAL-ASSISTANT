@@ -319,16 +319,6 @@ a:hover{color:#2B59FF}
 </div>
 </div>
 
-<div style="display:flex;flex-direction:column;gap:8px;margin:clamp(56px,7vw,80px) 0 28px"><div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#5A5A55">Screen overview</div><div style="font-size:16px;color:#3A3A36">All rebuilt screens and states. Click one to open it in the prototype.</div></div>
-<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:32px 16px;justify-items:center">
-<sc-for list="{{ screens }}" as="x" hint-placeholder-count="20">
-<div onClick="{{ x.go }}" style="display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer">
-<div style="zoom:0.34;pointer-events:none"><dc-import name="WrenApp" screen="{{ x.screen }}" preset="{{ x.preset }}" locked="{{ true }}" hint-size="402px,874px"></dc-import></div>
-<div style="font-size:13px;font-weight:600;text-align:center;line-height:1.3">{{ x.label }}</div>
-<sc-if value="{{ x.flag }}" hint-placeholder-val="{{ false }}"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.04em;padding:1px 6px;border-radius:999px;background:#FFE58A;color:#3D3200">INTERPRETATION</span></sc-if>
-</div>
-</sc-for>
-</div>
 </section>
 
 <section data-screen-label="08 Collaboration" style="max-width:1160px;margin:0 auto;padding:clamp(64px,9vw,112px) clamp(20px,4vw,48px) 0">
@@ -371,28 +361,6 @@ a:hover{color:#2B59FF}
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script>
-const SCREENS = [
-  ['Intro', 'intro', '', true],
-  ['Intro, last screen', 'intro', 'intro-3', true],
-  ['Sign up', 'signup', ''],
-  ['Sign-up error', 'signup', 'signup-error'],
-  ['Log in', 'login', 'login-error'],
-  ['Forgot password', 'forgot', 'forgot'],
-  ['Email sent', 'sent', 'sent'],
-  ['Account created', 'created', ''],
-  ['Meet the assistant', 'hello', ''],
-  ['Assessment', 'assess', 'assessment-mid'],
-  ['Exit assessment', 'assess', 'assessment-exit'],
-  ['Calendar: day', 'events', ''],
-  ['Calendar: month', 'events', 'events-month'],
-  ['Calendar: list', 'events', 'events-list'],
-  ['List: compact', 'events', 'events-compact'],
-  ['Event preview', 'preview', 'preview-past'],
-  ['Event details', 'details', 'details'],
-  ['Prompt', 'events', 'prompt-typing'],
-  ['Prompt reply', 'events', 'prompt-reply'],
-  ['Create by typing', 'create', 'create-done']
-];
 const FLOWS = [
   ['Onboarding', 'intro', ''],
   ['Sign-up & login', 'signup', ''],
@@ -404,12 +372,8 @@ const FLOWS = [
 class Component extends DCLogic {
   state = { screen: 'intro', preset: '', nonce: 0, flow: 'Onboarding' };
 
-  jump(screen, preset, flow, scroll) {
+  jump(screen, preset, flow) {
     this.setState(s => ({ screen, preset, nonce: s.nonce + 1, flow }));
-    if (scroll) {
-      const el = document.getElementById('prototype');
-      if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 16, behavior: 'smooth' });
-    }
   }
 
   renderVals() {
@@ -418,8 +382,7 @@ class Component extends DCLogic {
       notes: false, marks: false,
       pScreen: S.screen, pPreset: S.preset, pNonce: S.nonce,
       flows: FLOWS.map(([label, sc, pr]) => ({ key: label, label, bg: S.flow === label ? '#141414' : 'transparent', c: S.flow === label ? '#FFFFFF' : '#141414', go: () => this.jump(sc, pr, label) })),
-      restart: () => this.jump('intro', '', 'Onboarding'),
-      screens: SCREENS.map(([label, sc, pr]) => ({ key: label, label, screen: sc, preset: pr, flag: false, go: () => this.jump(sc, pr, '', true) }))
+      restart: () => this.jump('intro', '', 'Onboarding')
     };
   }
 }
